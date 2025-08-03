@@ -1,0 +1,97 @@
+:root {
+    --primary-color: #048b9f;
+    --wh-white: #fff;
+}
+
+@media only screen and (max-width: 1024px) {
+    .header-sub-heading {
+        font-size: 20px;
+    }
+}
+
+/* arrow belove */
+.arrow-container {
+    text-align: center;
+    display: none;
+}
+
+.arrow-belove-step {
+    color: var(--primary-color);
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 426px) {
+    .header-sub-heading {
+        font-size: 15px;
+        line-height: 5px;
+    }
+
+    .arrow-hide-on-mobile {
+        display: none;
+    }
+
+    .header-sub-heading-page {
+        line-height: 30px;
+        font-size: 20px;
+    }
+
+    .step-box-first h5 {
+        font-size: 18px;
+    }
+
+    .step-box-first p {
+        font-size: 14px;
+    }
+
+    .step-box-first ul {
+        font-size: 12px;
+    }
+
+    .step-box-second h5 {
+        font-size: 18px;
+    }
+
+    .step-box-second p {
+        font-size: 14px;
+    }
+
+    .step-box-first ul {
+        font-size: 12px;
+    }
+
+    .step h2 {
+        font-size: 18px;
+    }
+
+    .step p {
+        font-size: 14px;
+    }
+
+    .step ul {
+        font-size: 12px;
+    }
+
+    .step-desc h2 {
+        font-size: 18px;
+    }
+
+    .step-desc p {
+        font-size: 12px;
+    }
+
+    .step-desc ul {
+        font-size: 12px;
+    }
+
+    .arrow-container {
+        display: block;
+    }
+
+}
+
+@media only screen and (max-width: 376px) {
+    .header-sub-heading {
+        line-height: 20px;
+    }
+}

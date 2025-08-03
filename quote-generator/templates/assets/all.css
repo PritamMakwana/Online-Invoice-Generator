@@ -1,0 +1,135 @@
+#table-container {
+    overflow-x: auto;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.authorized-signatory {
+    width: 100% !important;
+}
+
+@media (max-width: 768px) {
+    #upi-show {
+        width: 300px !important;
+        height: 300px;
+        overflow: hidden;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #upi-show img {
+        width: 100% !important;
+        height: 60% !important;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+body {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+p, span, td {
+    font-weight: 500 !important;
+    font-size: 15px !important;
+}
+
+label, th {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+}
+
+.from-label, .bill-to-label {
+    font-size: 25px !important;
+    margin-bottom: 5px;
+}
+
+.bank-details p {
+    font-size: 15px !important;
+    line-height: 14px;
+}
+
+.bank-details-title {
+    font-size: 20px !important;
+}
+
+#Authorized-Text {
+    font-size: 17px !important;
+}
+
+h1 {
+    font-size: 32px !important;
+    font-weight: 900 !important;
+}
+
+/* ----------------- */
+#invoice, table, tr, td, th, h1, h2, h3, h4, h5, h6, span, p, input, label {
+    page-break-inside: avoid;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+thead {
+    display: table-header-group;
+}
+
+tbody {
+    display: table-row-group;
+}
+
+.page-break {
+    page-break-before: always;
+}
+
+#container-bank-details {
+    page-break-before: always;
+}
+
+#invoice {
+    margin: 0 auto !important;
+    width: 100%;
+    max-width: 595.28pt;
+    padding: 0;
+    position: relative;
+    left: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+@media print {
+    .page-break {
+        page-break-before: always;
+    }
+}
+
+/* aligment form and client */
+.from-info-lable {
+    font-weight: 600 !important;
+    text-align: start !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    margin-bottom: 15px !important;
+}
+
+.from-info-input {
+    margin: 0px 0px 5px 0px !important;
+    padding: 0px !important;
+}
+
+.bill-to-info-lable {
+    font-weight: 600 !important;
+    text-align: start !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    margin-bottom: 15px !important;
+}
+
+/* end aligment form and client */

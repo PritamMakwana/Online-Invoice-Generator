@@ -1,0 +1,55 @@
+@media only screen and (max-width: 1025px) {
+    .table-h {
+        font-size: 22px;
+    }
+
+    .dataTables_wrapper {
+        font-size: 10px;
+    }
+
+    table.dataTable thead th {
+        padding: 10px !important;
+    }
+
+    table.dataTable tbody td {
+        padding: 5px !important;
+    }
+
+    .dropdown-menu.show {
+        font-size: 14px;
+    }
+
+    table.dataTable {
+        overflow: auto;
+    }
+
+    .header-sub-heading-page {
+        font-size: 26px;
+    }
+}
+
+@media only screen and (max-width: 769px) {
+    .header-sub-heading-page {
+        font-size: 15px;
+    }
+
+    #clear-history-btn {
+        font-size: 12px;
+    }
+
+    .download-histroy {
+        font-size: 12px;
+    }
+}
+
+
+@media only screen and (max-width: 426px) {
+    .mobile-heading {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .table-h {
+        font-size: 10px;
+    }
+}

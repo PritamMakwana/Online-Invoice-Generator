@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/assets/cdn/Font/poppins.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/history.css" rel="stylesheet">
+    <link href="assets/css/history_responsive.css" rel="stylesheet">
+    <link href="/assets/cdn/sweetalert/css/sweetalert2.min.css" rel="stylesheet">
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="assets/css/dataTables_1.13.6.min.css">
+
+    <link href="/assets/cdn/bootstrap-toggle/css/bootstrap-toggle.min.css" rel="stylesheet">
+
+    <title>History | Online Invoice Generator</title>
+</head>
+
+<body>
+    <header id="header"></header>
+
+    <!-- header -->
+    <div class="header-gradient-bg row">
+        <div class="col-sm-0 col-md-0 col-lg-2">
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-8">
+            <h1 class="header-heading" data-i18n="invoice_history.page_heading">Invoice History</h1>
+        </div>
+    </div>
+    <!-- end header -->
+
+    <div class="container mt-5">
+
+        <div class="d-flex flex-row justify-content-between align-items-baseline mobile-heading">
+            <div class="me-2">
+                <!-- <p class="header-sub-heading-page">See your recent generated invoice history:</p> -->
+                <h2 data-i18n="invoice_history.page_start">See your recent generated invoice history:</h2>
+            </div>
+            <div>
+                <button onclick="exportDataToCSV()" class="btn btn-outline-secondary download-histroy mb-2">
+                    <i class="fas fa-solid fa-file-export me-2"></i><span data-i18n="invoice_history.btn_csv">Export
+                        to CSV</span></button>
+                <button id="clear-history-btn" class="btn mb-2"><i class="fas fa-trash-alt me-2 "></i> <span
+                        data-i18n="invoice_history.btn_clear">Clear All
+                        History</span></button>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover table-bordered history-table" id="download-history-table"
+                border="1">
+                <thead class="histroy-table-heading">
+                    <tr>
+                        <th scope="col" data-i18n="invoice_history.th_no">No</th>
+                        <th scope="col" data-i18n="invoice_history.th_pdf_heading">PDF Heading</th>
+                        <th scope="col" data-i18n="invoice_history.th_invoice_no">Invoice No</th>
+                        <th scope="col" data-i18n="invoice_history.th_from_to">From To</th>
+                        <th scope="col" data-i18n="invoice_history.th_bill_to">Bill To</th>
+                        <th scope="col" data-i18n="invoice_history.th_payment_date">Payment Date</th>
+                        <th scope="col" data-i18n="invoice_history.th_due_date">Due Date</th>
+                        <th scope="col" data-i18n="invoice_history.th_payment_method">Payment Method</th>
+                        <th scope="col" data-i18n="invoice_history.th_status">Status</th>
+                        <th scope="col" data-i18n="invoice_history.th_total">Total</th>
+                        <th scope="col" data-i18n="invoice_history.th_amount_paid">Amount Paid</th>
+                        <th scope="col" data-i18n="invoice_history.th_actions">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+
+    <!-- Payment Modal -->
+    <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="paymentModalLabel" data-i18n="invoice_history.pay_heading">Update
+                        Payment Details</h5>
+                    <button type="button" class="btn-close btn-outline-secondary" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="paymentForm">
+                        <input type="hidden" class="form-control" id="id" readonly>
+                        <div class="mb-3">
+                            <label for="paymentInvoiceNo" class="form-label"
+                                data-i18n="invoice_history.pay_invoice_no">Invoice No</label>
+                            <input type="text" class="form-control" id="paymentInvoiceNo" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="paymentBillTo" class="form-label" data-i18n="invoice_history.pay_bill_to">Bill
+                                To</label>
+                            <input type="text" class="form-control" id="paymentBillTo" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="paymentTotal" class="form-label"
+                                data-i18n="invoice_history.pay_invoice_total">Invoice Total</label>
+                            <input type="text" class="form-control" id="paymentTotal" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="paymentAmountPaid" class="form-label"
+                                data-i18n="invoice_history.pay_amount_paid">Amount Paid</label>
+                            <input type="text" class="form-control" id="paymentAmountPaid">
+                        </div>
+                        <div class="mb-3">
+                            <label for="paymentDate" class="form-label" data-i18n="invoice_history.pay_date">Payment
+                                Date</label>
+                            <input type="date" class="form-control" id="paymentDate">
+                        </div>
+                        <div class="mb-3">
+                            <label for="paymentMethod" class="form-label" data-i18n="invoice_history.pay_method">Payment
+                                Method</label>
+                            <select class="form-select" id="paymentMethod">
+                                <option value="-">No Payment</option>
+                                <option value="Account Transfer">Account Transfer</option>
+                                <option value="UPI">UPI</option>
+                                <option value="Cash Payment">Cash Payment</option>
+                                <option value="Cheque">Cheque</option>
+                                <option value="Demand Draft">Demand Draft</option>
+                                <option value="Credit Card">Credit Card</option>
+                                <option value="Debit Card">Debit Card</option>
+                                <option value="Digital Wallet">Digital Wallet</option>
+                                <option value="Prepaid Card">Prepaid Card</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn delete-invoice btn-outline-secondary" data-bs-dismiss="modal"><i class="fas fa-times me-2"></i><span
+                            data-i18n="invoice_history.pay_close_btn">Close</span></button>
+                    <button type="button" class="btn download-histroy btn-outline-secondary"
+                        id="savePaymentDetails"><i class="fas fa-save me-2"></i><span data-i18n="invoice_history.pay_save_btn">Save</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Add this in your HTML -->
+    <div class="modal fade show" id="LoadSpinner" tabindex="-1" role="dialog" aria-labelledby="emailModalLabel"
+        aria-hidden="true" style="background: #00000026;display: none;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="d-flex align-items-center">
+                        <strong><span data-i18n="invoice_history.model_loading">Loading...</span></strong>
+                        <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+    <button id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <script src="assets/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="assets/js/popper.min.js" crossorigin="anonymous"></script>
+    <script src="assets/js/jquery.js" crossorigin="anonymous"></script>
+    <script src="/assets/cdn/bootstrap-toggle/js/bootstrap-toggle.min.js"></script>
+    <script src="/assets/cdn/sweetalert/js/sweetalert2.min.js"></script>
+    <script src="assets/js/js.js" crossorigin="anonymous"></script>
+    <script src="assets/js/history.js" crossorigin="anonymous"></script>
+
+    <!-- src use pdf download-->
+    <script src="assets/js/html2canvas_1.4.1.min.js.js"></script>
+    <script src="assets/js/jspdf_2.5.1.umd.min.js"></script>
+    <!-- DataTables JS -->
+    <script src="assets/js/dataTables_1.13.6.min.js"></script>
+    <script src="/assets/js/lang.js" crossorigin="anonymous" defer></script>
+    <script src="/assets/js/loading-spinner.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Poppins Font -->
+    <link href="/assets/cdn/Font/poppins.css" rel="stylesheet">
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Google Font: Space Grotesk -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/settings.css" rel="stylesheet">
+    <link href="assets/css/setting_default_template.css" rel="stylesheet">
+    <link href="assets/css/setting_default_template_responsive.css" rel="stylesheet">
+     <link href="/assets/cdn/bootstrap-toggle/css/bootstrap-toggle.min.css" rel="stylesheet">
+     <link href="/assets/cdn/sweetalert/css/sweetalert2.min.css" rel="stylesheet">
+
+    <title>Set Default Template | Online Invoice Generator</title>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header id="header"></header>
+    <!-- contact -->
+
+    <!-- header -->
+    <div class="header-gradient-bg row">
+        <div class="col-sm-0 col-md-0 col-lg-2">
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-8">
+            <h1 class="header-heading" data-i18n="setting_default_currency_template.manage_settings">Manage Settings</h1>
+        </div>
+    </div>
+    <!-- end header -->
+
+
+
+    <div class="container-fluid mt-4">
+        <div class="row">
+
+            <div class="col-lg-3 col-md-3 col-sm-12 row d-flex flex-column side-item-responsive-off">
+                <div class="col-lg-12 col-md-12 col-sm-6">
+                    <div class="side-item" onclick="window.location.href='client-details.html'">
+                        <div class="side-item-body">
+                            <div class="d-flex justify-content-around align-items-center">
+                                <div>
+                                    <p class="side-item-heading" data-i18n="setting_default_currency_template.section_client_details">Client Details</p>
+                                </div>
+                                <div>
+                                    <i class="fas fa-duotone fa-regular fa-chevron-right arrow-icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 col-md-12 col-sm-6">
+                    <div class="side-item" onclick="window.location.href='from-details.html'">
+                        <div class="side-item-body">
+                            <div class="d-flex justify-content-around align-items-center">
+                                <div>
+                                    <p class="side-item-heading" data-i18n="setting_default_currency_template.section_from_details">From Details</p>
+                                </div>
+                                <div>
+                                    <i class="fas fa-duotone fa-regular fa-chevron-right arrow-icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 col-md-12 col-sm-6">
+                    <div class="side-item" onclick="window.location.href='setting-default-currency.html'">
+                        <div class="side-item-body">
+                            <div class="d-flex justify-content-around align-items-center">
+                                <div>
+                                    <p class="side-item-heading" data-i18n="setting_default_currency_template.section_set_default_currency">Set Default Currency</p>
+                                </div>
+                                <div>
+                                    <i class="fas fa-duotone fa-regular fa-chevron-right arrow-icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 col-md-12 col-sm-6">
+                    <div class="side-item active-item" onclick="window.location.href='setting-default-template.html'">
+                        <div class="side-item-body">
+                            <div class="d-flex justify-content-around align-items-center">
+                                <div>
+                                    <p class="side-item-heading" data-i18n="setting_default_currency_template.section_set_default_template">Set Default Template</p>
+                                </div>
+                                <div>
+                                    <i class="fas fa-duotone fa-regular fa-chevron-right arrow-icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 col-md-12 col-sm-6">
+                    <div class="side-item" onclick="window.location.href='setting-import-products.html'">
+                        <div class="side-item-body">
+                            <div class="d-flex justify-content-around align-items-center">
+                                <div>
+                                    <p class="side-item-heading" data-i18n="setting_default_currency_template.section_import_products">Import Products</p>
+                                </div>
+                                <div>
+                                    <i class="fas fa-duotone fa-regular fa-chevron-right arrow-icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-12 row side-item-responsive-on ">
+
+                <div class="col-6">
+                    <div class="side-item" onclick="window.location.href='client-details.html'">
+                        <div class="side-item-body">
+                            <div class="d-flex justify-content-around align-items-center">
+                                <div>
+                                    <p class="side-item-heading" data-i18n="setting_default_currency_template.section_client_details">Client Details</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="side-item" onclick="window.location.href='from-details.html'">
+                        <div class="side-item-body">
+                            <div class="d-flex justify-content-around align-items-center">
+                                <div>
+                                    <p class="side-item-heading" data-i18n="setting_default_currency_template.section_from_details">From Details</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="side-item" onclick="window.location.href='setting-default-currency.html'">
+                        <div class="side-item-body">
+                            <div class="d-flex justify-content-around align-items-center">
+                                <div>
+                                    <p class="side-item-heading" data-i18n="setting_default_currency_template.section_set_default_currency">Set Default Currency</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="side-item active-item" onclick="window.location.href='setting-default-template.html'">
+                        <div class="side-item-body">
+                            <div class="d-flex justify-content-around align-items-center">
+                                <div>
+                                    <p class="side-item-heading" data-i18n="setting_default_currency_template.section_set_default_template">Set Default Template</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="side-item" onclick="window.location.href='setting-import-products.html'">
+                        <div class="side-item-body">
+                            <div class="d-flex justify-content-around align-items-center">
+                                <div>
+                                    <p class="side-item-heading" data-i18n="setting_default_currency_template.section_import_products">Import Products</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-9 col-md-9 col-sm-12">
+                <!-- Set default template  -->
+                <div class="container">
+                    <div class="row justify-content-center mt-4">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body card-body-color">
+                                    <p class="card-heading"  data-i18n="setting_default_currency_template.teamplate_title">Default Teamplate</p>
+                                    <form id="templateForm">
+                                        <div class="row fileds-container">
+                                            <div
+                                                class="d-flex flex-row justify-content-start align-items-baseline mobile-save-btn">
+                                                <div>
+                                                    <button type="submit" class="btn-template btn btn-primary"
+                                                        id="submitTemplateBtn">
+                                                        <i class="fas fa-solid fa-light fa-hand-pointer me-2"></i><span data-i18n="setting_default_currency_template.teamplate_save_btn">Save
+                                                        As Default
+                                                        Template</span></button>
+                                                </div>
+                                            </div>
+
+                                            <div class="row text-start">
+                                                <!-- Image Option 1 -->
+                                                <div class="col-lg-4 col-md-6 col-sm-12 my-2">
+                                                    <input type="radio" id="template1" name="template" value="1"
+                                                        class="d-none">
+                                                    <label for="template1" class="template-label template-label-show-1"
+                                                        onclick="templateHightlight(1)">
+                                                        <img src="templates/template_1/template_1.png" alt="Template 1"
+                                                            class="img-thumbnail template-image">
+                                                    </label>
+                                                </div>
+                                                <!-- Image Option 2 -->
+                                                <div class="col-lg-4 col-md-6 col-sm-12 my-2">
+                                                    <input type="radio" id="template2" name="template" value="2"
+                                                        class="d-none">
+                                                    <label for="template2" class="template-label template-label-show-2"
+                                                        onclick="templateHightlight(2)">
+                                                        <img src="templates/template_2/template_2.png" alt="Template 2"
+                                                            class="img-thumbnail template-image">
+                                                    </label>
+                                                </div>
+                                                <!-- Image Option 3 -->
+                                                <div class="col-lg-4 col-md-6 col-sm-12 my-2">
+                                                    <input type="radio" id="template3" name="template" value="3"
+                                                        class="d-none">
+                                                    <label for="template3" class="template-label template-label-show-3"
+                                                        onclick="templateHightlight(3)">
+                                                        <img src="templates/template_3/template_3.png" alt="Template 3"
+                                                            class="img-thumbnail template-image">
+                                                    </label>
+                                                </div>
+                                                <!-- Image Option 4 -->
+                                                <div class="col-lg-4 col-md-6 col-sm-12 my-2">
+                                                    <input type="radio" id="template4" name="template" value="4"
+                                                        class="d-none">
+                                                    <label for="template4" class="template-label template-label-show-4"
+                                                        onclick="templateHightlight(4)">
+                                                        <img src="templates/template_4/template_4.png" alt="Template 4"
+                                                            class="img-thumbnail template-image">
+                                                    </label>
+                                                </div>
+                                                <!-- Image Option 5 -->
+                                                <div class="col-lg-4 col-md-6 col-sm-12 my-2">
+                                                    <input type="radio" id="template5" name="template" value="5"
+                                                        class="d-none">
+                                                    <label for="template5" class="template-label template-label-show-5"
+                                                        onclick="templateHightlight(5)">
+                                                        <img src="templates/template_5/template_5.png" alt="Template 5"
+                                                            class="img-thumbnail template-image">
+                                                    </label>
+                                                </div>
+
+                                                <!-- Image Option 6 -->
+                                                <div class="col-lg-4 col-md-6 col-sm-12 my-2">
+                                                    <input type="radio" id="template6" name="template" value="6"
+                                                        class="d-none">
+                                                    <label for="template6" class="template-label template-label-show-6"
+                                                        onclick="templateHightlight(6)">
+                                                        <img src="templates/template_6/template_6.png" alt="Template 6"
+                                                            class="img-thumbnail template-image">
+                                                    </label>
+                                                </div>
+
+                                                <!-- Image Option 7 -->
+                                                <div class="col-lg-4 col-md-6 col-sm-12 my-2">
+                                                    <input type="radio" id="template7" name="template" value="7"
+                                                        class="d-none">
+                                                    <label for="template7" class="template-label template-label-show-7"
+                                                        onclick="templateHightlight(7)">
+                                                        <img src="templates/template_7/template_7.png" alt="Template 7"
+                                                            class="img-thumbnail template-image">
+                                                    </label>
+                                                </div>
+
+                                                <!-- Image Option 8 -->
+                                                <div class="col-lg-4 col-md-6 col-sm-12 my-2">
+                                                    <input type="radio" id="template8" name="template" value="8"
+                                                        class="d-none">
+                                                    <label for="template8" class="template-label template-label-show-8"
+                                                        onclick="templateHightlight(8)">
+                                                        <img src="templates/template_8/template_8.png" alt="Template 8"
+                                                            class="img-thumbnail template-image">
+                                                    </label>
+                                                </div>
+
+                                                <!-- Image Option 9 -->
+                                                <div class="col-lg-4 col-md-6 col-sm-12 my-2">
+                                                    <input type="radio" id="template9" name="template" value="9"
+                                                        class="d-none">
+                                                    <label for="template9" class="template-label template-label-show-9"
+                                                        onclick="templateHightlight(9)">
+                                                        <img src="templates/template_9/template_9.png" alt="Template 9"
+                                                            class="img-thumbnail template-image">
+                                                    </label>
+                                                </div>
+
+                                                <!-- Image Option 10 -->
+                                                <div class="col-lg-4 col-md-6 col-sm-12 my-2">
+                                                    <input type="radio" id="template10" name="template" value="10"
+                                                        class="d-none">
+                                                    <label for="template10"
+                                                        class="template-label template-label-show-10"
+                                                        onclick="templateHightlight(10)">
+                                                        <img src="templates/template_10/template_10.png"
+                                                            alt="Template 10" class="img-thumbnail template-image">
+                                                    </label>
+                                                </div>
+
+                                                <!-- Image Option 11 -->
+                                                <div class="col-lg-4 col-md-6 col-sm-12 my-2">
+                                                    <input type="radio" id="template11" name="template" value="11"
+                                                        class="d-none">
+                                                    <label for="template11"
+                                                        class="template-label template-label-show-11"
+                                                        onclick="templateHightlight(11)">
+                                                        <img src="templates/template_11/template_11.png"
+                                                            alt="Template 11" class="img-thumbnail template-image">
+                                                    </label>
+                                                </div>
+
+                                                <!-- Image Option 12 -->
+                                                <div class="col-lg-4 col-md-6 col-sm-12 my-2">
+                                                    <input type="radio" id="template12" name="template" value="12"
+                                                        class="d-none">
+                                                    <label for="template12"
+                                                        class="template-label template-label-show-12"
+                                                        onclick="templateHightlight(12)">
+                                                        <img src="templates/template_12/template_12.png"
+                                                            alt="Template 12" class="img-thumbnail template-image">
+                                                    </label>
+                                                </div>
+
+                                                <!-- Image Option 13 -->
+                                                <div class="col-lg-4 col-md-6 col-sm-12 my-2">
+                                                    <input type="radio" id="template13" name="template" value="13"
+                                                        class="d-none">
+                                                    <label for="template13"
+                                                        class="template-label template-label-show-13"
+                                                        onclick="templateHightlight(13)">
+                                                        <img src="templates/template_13/template_13.png"
+                                                            alt="Template 13" class="img-thumbnail template-image">
+                                                    </label>
+                                                </div>
+
+                                                <!-- Image Option 14 -->
+                                                <div class="col-lg-4 col-md-6 col-sm-12 my-2">
+                                                    <input type="radio" id="template14" name="template" value="14"
+                                                        class="d-none">
+                                                    <label for="template14"
+                                                        class="template-label template-label-show-14"
+                                                        onclick="templateHightlight(14)">
+                                                        <img src="templates/template_14/template_14.png"
+                                                            alt="Template 14" class="img-thumbnail template-image">
+                                                    </label>
+                                                </div>
+
+                                                <!-- Image Option 15 -->
+                                                <div class="col-lg-4 col-md-6 col-sm-12 my-2">
+                                                    <input type="radio" id="template15" name="template" value="15"
+                                                        class="d-none">
+                                                    <label for="template15"
+                                                        class="template-label template-label-show-15"
+                                                        onclick="templateHightlight(15)">
+                                                        <img src="templates/template_15/template_15.png"
+                                                            alt="Template 15" class="img-thumbnail template-image">
+                                                    </label>
+                                                </div>
+
+                                                <!-- Image Option 16 -->
+                                                <div class="col-lg-4 col-md-6 col-sm-12 my-2">
+                                                    <input type="radio" id="template16" name="template" value="16"
+                                                        class="d-none">
+                                                    <label for="template16"
+                                                        class="template-label template-label-show-16"
+                                                        onclick="templateHightlight(16)">
+                                                        <img src="templates/template_16/template_16.png"
+                                                            alt="Template 16" class="img-thumbnail template-image">
+                                                    </label>
+                                                </div>
+
+                                                <!-- Image Option 17 -->
+                                                <div class="col-lg-4 col-md-6 col-sm-12 my-2">
+                                                    <input type="radio" id="template17" name="template" value="17"
+                                                        class="d-none">
+                                                    <label for="template17"
+                                                        class="template-label template-label-show-17"
+                                                        onclick="templateHightlight(17)">
+                                                        <img src="templates/template_17/template_17.png"
+                                                            alt="Template 17" class="img-thumbnail template-image">
+                                                    </label>
+                                                </div>
+
+                                                <!-- Image Option 18 -->
+                                                <div class="col-lg-4 col-md-6 col-sm-12 my-2">
+                                                    <input type="radio" id="template18" name="template" value="18"
+                                                        class="d-none">
+                                                    <label for="template18"
+                                                        class="template-label template-label-show-18"
+                                                        onclick="templateHightlight(18)">
+                                                        <img src="templates/template_18/template_18.png"
+                                                            alt="Template 18" class="img-thumbnail template-image">
+                                                    </label>
+                                                </div>
+
+                                                <!-- Image Option 19 -->
+                                                <div class="col-lg-4 col-md-6 col-sm-12 my-2">
+                                                    <input type="radio" id="template19" name="template" value="19"
+                                                        class="d-none">
+                                                    <label for="template19"
+                                                        class="template-label template-label-show-19"
+                                                        onclick="templateHightlight(19)">
+                                                        <img src="templates/template_19/template_19.png"
+                                                            alt="Template 19" class="img-thumbnail template-image">
+                                                    </label>
+                                                </div>
+
+                                                <!-- Image Option 20 -->
+                                                <div class="col-lg-4 col-md-6 col-sm-12 my-2">
+                                                    <input type="radio" id="template20" name="template" value="20"
+                                                        class="d-none">
+                                                    <label for="template20"
+                                                        class="template-label template-label-show-20"
+                                                        onclick="templateHightlight(20)">
+                                                        <img src="templates/template_20/template_20.png"
+                                                            alt="Template 19" class="img-thumbnail template-image">
+                                                    </label>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </form>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end Set default template  -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div id="footer"></div>
+    <button id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <script src="assets/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="assets/js/popper.min.js" crossorigin="anonymous"></script>
+    <script src="assets/js/jquery.js" crossorigin="anonymous"></script>
+    <script src="/assets/cdn/bootstrap-toggle/js/bootstrap-toggle.min.js"></script>
+    <script src="/assets/cdn/sweetalert/js/sweetalert2.min.js"></script>
+    <script src="assets/js/js.js" crossorigin="anonymous"></script>
+    
+
+    <script src="assets/js/setting_default_template.js" crossorigin="anonymous"></script>
+    <script src="/assets/js/lang.js" crossorigin="anonymous" defer></script>
+    <script src="/assets/js/loading-spinner.js" crossorigin="anonymous" ></script>
+</body>
+
+</html>

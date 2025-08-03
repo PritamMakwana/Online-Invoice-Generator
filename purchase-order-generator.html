@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Poppins Font -->
+    <link href="/assets/cdn/Font/poppins.css" rel="stylesheet">
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Google Font: Space Grotesk -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <link href="assets/purchase_order_generator/css/purchase_order.css" rel="stylesheet">
+    <link href="assets/purchase_order_generator/css/purchase_order_imporve.css" rel="stylesheet">
+    <link href="assets/purchase_order_generator/css/purchase_order_responsive.css" rel="stylesheet">
+    <link href="/assets/cdn/sweetalert/css/sweetalert2.min.css" rel="stylesheet">
+    <link href="/assets/cdn/bootstrap-toggle/css/bootstrap-toggle.min.css" rel="stylesheet">
+
+    <title>Purchase Order Generator</title>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header id="header"></header>
+
+    <!-- header -->
+    <div class="header-gradient-bg row">
+        <div class="col-sm-0 col-md-0 col-lg-2">
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-8">
+            <h1 class="header-heading" data-i18n="purchase.page_heading">Purchase Order Generator</h1>
+        </div>
+    </div>
+    <!-- end header -->
+    <div class="container my-2">
+        <h1 class="heading-of-invoice" data-i18n="purchase.page_start">Start Creating Your Purchase Order : </h1>
+
+        <div id="ErrorMessage">
+        </div>
+
+        <div class="row mobile-reverse-show">
+
+            <div class="col-sm-12 col-md-12 col-lg-9" id="invoice-size">
+                <div class="card container card-border" id="invoice">
+
+                    <div class="row invoice-header">
+                        <!-- header section -->
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group col-md-12 heading-section">
+                                <input type="text" class="form-control invoice-heading mb-2"
+                                    placeholder="Purchase Order" id='invoice-heading'
+                                    data-i18n-placeholder="purchase.placeholder_heading">
+                                <h1 class="invoice-title d-flex justify-content-end my-1 heading-label-show "></h1>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 row">
+                            <div class="col-lg-8 col-md-4 col-sm-6">
+                            </div>
+                            <div class="col-lg-4 col-md-8 col-sm-6">
+                                <div class="invoice-logo">
+                                    <center>
+                                        <span>
+                                            <img src="assets/image/invoice/upload-image.png" /><span
+                                                data-i18n="purchase.logo_add_yout_photo">+ Add Your Logo</span><br>
+                                            <span data-i18n="purchase.logo_add_yout_photo_recommended">Recommended size:
+                                                300x300 pixels</span>
+                                        </span>
+                                    </center>
+                                    <input type="file" id="logoInput" accept="image/*">
+                                    <img id="logoImage" alt="Logo" style="display: none;">
+                                    <button id="removeLogo" class="remove-logo" style="display: none;"
+                                        aria-label="Remove Logo">&times;</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end header section -->
+
+                        <!-- from -->
+                        <div class="col-md-6 row header-left">
+                            <div class="col-md-12 from-section">
+                                <div class="form-group row">
+                                    <div class="col-md-1"></div>
+                                    <label class="col-md-4  from-label" id="from_lable_title"
+                                        data-i18n="purchase.from">Order By</label>
+                                    <div class="col-md-6">
+                                        <input type="hidden" class="" value="101">
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-3 d-flex align-items-center">
+                                        <label class="from-info-lable" id="from_lable_name"
+                                            data-i18n="purchase.from_name">Name</label>
+                                        <div><span class="text-danger">*</span></div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <input type="text"
+                                            class="parent-hide form-control-plaintext form-control from-info-input"
+                                            placeholder="Business Name" id="from_name"
+                                            data-i18n-placeholder="invoice.placeholder_from_name">
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-md-1"></div>
+                                    <label class="col-md-3 from-info-lable" id="from_lable_email"
+                                        data-i18n="purchase.from_email">Email</label>
+                                    <div class="col-md-7">
+                                        <input type="text"
+                                            class="parent-hide form-control-plaintext form-control from-info-input"
+                                            placeholder="name@business.com"
+                                            data-i18n-placeholder="invoice.placeholder_from_email" id="from_email">
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-md-1"></div>
+                                    <label class="col-md-3 from-info-lable" id="from_lable_address"
+                                        data-i18n="purchase.from_address">Address</label>
+                                    <div class="col-md-7">
+                                        <input type="text"
+                                            class="parent-hide form-control-plaintext form-control from-info-input"
+                                            placeholder="Street"
+                                            data-i18n-placeholder="invoice.placeholder_from_address_street"
+                                            id="from-street-input">
+                                        <input type="text"
+                                            class="parent-hide form-control-plaintext form-control from-info-input"
+                                            placeholder="City,State"
+                                            data-i18n-placeholder="invoice.placeholder_from_address_city"
+                                            id="from-city-state-input" style="display: none;">
+                                        <input type="text"
+                                            class="parent-hide form-control-plaintext form-control from-info-input"
+                                            placeholder="Zip Code"
+                                            data-i18n-placeholder="invoice.placeholder_from_address_zip"
+                                            id="from-zip-code-input" style="display: none;">
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-md-1"></div>
+                                    <label class="col-md-3 from-info-lable" id="from_lable_phone"
+                                        data-i18n="purchase.from_phone">Phone</label>
+                                    <div class="col-md-7">
+                                        <input type="text"
+                                            class="parent-hide form-control-plaintext form-control from-info-input"
+                                            placeholder="(123) 456 789"
+                                            data-i18n-placeholder="invoice.placeholder_from_phone" id="from_phone">
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-md-1"></div>
+                                    <label class="col-md-3 from-info-lable" id="from_lable_business_number"
+                                        data-i18n="purchase.from_business_number">Business
+                                        Number</label>
+                                    <div class="col-md-7">
+                                        <input type="text"
+                                            class="parent-hide form-control-plaintext form-control from-info-input"
+                                            placeholder="12-3456-789"
+                                            data-i18n-placeholder="invoice.placeholder_from_business_number"
+                                            id="from_business_number">
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-md-1"></div>
+                                    <label class="col-md-3 from-info-lable" id="from_lable_website"
+                                        data-i18n="purchase.from_website">Website</label>
+                                    <div class="col-md-7">
+                                        <input type="text"
+                                            class="parent-hide form-control-plaintext form-control from-info-input"
+                                            placeholder="https://example-website.com"
+                                            data-i18n-placeholder="invoice.placeholder_from_website" id="from_website">
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-md-1"></div>
+                                    <label class="col-md-3 from-info-lable" id="from_lable_business_owner_name"
+                                        data-i18n="purchase.from_owner">Owner</label>
+                                    <div class="col-md-7">
+                                        <input type="text"
+                                            class="parent-hide form-control-plaintext form-control from-info-input"
+                                            placeholder="Business owner name"
+                                            data-i18n-placeholder="invoice.placeholder_from_owner"
+                                            id="from_business_owner_name">
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end from -->
+
+
+                        <!-- bill to -->
+                        <div class="col-md-6 row ">
+                            <div class="col-md-12 from-section">
+
+                                <div class="form-group row">
+                                    <div class="col-md-1"></div>
+                                    <label class="col-md-4  bill-to-label" id="bill_to_lable_title"
+                                        data-i18n="purchase.from_owner">Order To</label>
+                                    <div class="col-md-6">
+                                        <input type="hidden" class="" value="101">
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-3 d-flex align-items-center">
+                                        <label class="bill-to-info-lable" id="bill_to_lable_name"
+                                            data-i18n="purchase.bill_to_name">Name</label>
+                                        <div><span class="text-danger">*</span></div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="text"
+                                            class="parent-hide form-control-plaintext form-control from-info-input"
+                                            placeholder="Client Name" id="bill_to_name"
+                                            data-i18n-placeholder="invoice.placeholder_bill_to_name">
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-md-1"></div>
+                                    <label class="col-md-3 bill-to-info-lable" id="bill_to_lable_email"
+                                        data-i18n="purchase.bill_to_email">Email</label>
+                                    <div class="col-md-8">
+                                        <input type="text"
+                                            class="parent-hide form-control-plaintext form-control from-info-input"
+                                            placeholder="name@client.com" id="bill-to-email"
+                                            data-i18n-placeholder="invoice.placeholder_bill_to_email">
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-md-1"></div>
+                                    <label class="col-md-3 bill-to-info-lable" id="bill_to_lable_address"
+                                        data-i18n="purchase.bill_to_address">Address</label>
+                                    <div class="col-md-8">
+                                        <input type="text"
+                                            class="parent-hide form-control-plaintext form-control from-info-input"
+                                            placeholder="Street" id="bill-to-street-input"
+                                            data-i18n-placeholder="invoice.placeholder_bill_to_street">
+
+                                        <input type="text"
+                                            class="parent-hide form-control-plaintext form-control from-info-input"
+                                            placeholder="City,State" id="bill-to-city-state-input"
+                                            style="display: none;"
+                                            data-i18n-placeholder="invoice.placeholder_bill_to_city">
+                                        <input type="text"
+                                            class="parent-hide form-control-plaintext form-control from-info-input"
+                                            placeholder="Zip Code" id="bill-to-zip-code-input" style="display: none;"
+                                            data-i18n-placeholder="invoice.placeholder_bill_to_zip">
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-md-1"></div>
+                                    <label class="col-md-3 bill-to-info-lable" id="bill_to_lable_phone"
+                                        data-i18n="purchase.bill_to_phone">Phone</label>
+                                    <div class="col-md-8">
+                                        <input type="text"
+                                            class="parent-hide form-control-plaintext form-control from-info-input"
+                                            placeholder="(123) 456 789" id="bill-to-phone"
+                                            data-i18n-placeholder="invoice.placeholder_bill_to_phone">
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-md-1"></div>
+                                    <label class="col-md-3 bill-to-info-lable" id="bill_to_lable_mobile"
+                                        data-i18n="purchase.bill_to_mobile">Mobile</label>
+                                    <div class="col-md-8">
+                                        <input type="text"
+                                            class="parent-hide form-control-plaintext form-control from-info-input"
+                                            placeholder="(123) 456 789" id="bill-to-mobile"
+                                            data-i18n-placeholder="invoice.placeholder_bill_to_mobile">
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-md-1"></div>
+                                    <label class="col-md-3 bill-to-info-lable" id="bill_to_lable_fax"
+                                        data-i18n="purchase.bill_to_fax">Fax</label>
+                                    <div class="col-md-8">
+                                        <input type="text"
+                                            class="parent-hide form-control-plaintext form-control from-info-input"
+                                            placeholder="(123) 456 789" id="bill-to-fax"
+                                            data-i18n-placeholder="invoice.placeholder_bill_to_fax">
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- end bill to -->
+                        <hr class="hr">
+
+                        <!-- Terms -->
+                        <div class="col-md-6 row ">
+                            <div class="col-md-12 from-section">
+                                <div class="form-group row">
+                                    <div class="col-md-1"></div>
+                                    <label class="col-md-3 bill-to-info-lable" id="terms_lable_number"
+                                        data-i18n="purchase.terms_sec_number">Number</label>
+                                    <div class="col-md-7">
+                                        <input type="text"
+                                            class="parent-hide form-control-plaintext form-control from-info-input terms_number"
+                                            placeholder="ORDER0001" value="ORDER0001" id="terms_number">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-md-1"></div>
+                                    <label class="col-md-3 bill-to-info-lable" id="terms_lable_date"
+                                        data-i18n="purchase.terms_sec_date">Date</label>
+                                    <div class="col-md-7">
+                                        <input type="date"
+                                            class="parent-hide form-control-plaintext form-control from-info-input terms_date"
+                                            id="terms_date">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Terms -->
+                    </div>
+                    <!-- table -->
+                    <div class="container mt-5" id="table-image">
+                        <div class="table-responsive">
+                            <table id='table-filed'>
+                            </table>
+                        </div>
+                        <button class="hide-t line-item" onclick="addLineItem()"
+                            data-i18n="purchase.table_add_line_item">+ Line Item</button>
+                    </div>
+                    <!-- table end -->
+                    <div class="row sub-total-section">
+                        <!-- Notes,Terms -->
+                        <div class="col-md-6 row notes-teams-left">
+                            <div class="col-md-12 notes-teams-section">
+                                <div class="form-group row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-10">
+                                        <label class="notes-teams-lable" id="notes_lable_description"
+                                            data-i18n="purchase.notes_terms_notes_description">Notes</label>
+                                        <textarea id="notes" class="form-control note-write notes-teams-input"
+                                            placeholder="Notes - any relevant information not already covered"
+                                            data-i18n-placeholder="purchase.placeholder_notes_terms_notes_description"></textarea>
+                                        <label class="d-flex justify-content-start note-show"></label>
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-10">
+                                        <label class="notes-teams-lable" id="terms_lable_description"
+                                            data-i18n="purchase.notes_terms_terms_description">Terms</label>
+                                        <textarea id="terms"
+                                            class="form-control term-write notes-teams-input terms-note"
+                                            placeholder="Terms and conditions - late fees, payment methods, delivery schedule"
+                                            data-i18n-placeholder="purchase.placeholder_notes_terms_terms_description"></textarea>
+                                        <label class="d-flex justify-content-start term-show"></label>
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- end Notes,Terms -->
+
+                        <!-- subtotal -->
+                        <div class="col-md-6 row sub-total-right">
+                            <div class="col-md-12 sub-total-section">
+
+                                <div class="form-group row">
+                                    <div class="input-group">
+                                        <label class="sub-total-lable" id="subtotal_lable_subtotal"
+                                            data-i18n="purchase.total_preview_subtotal">Subtotal</label>
+                                        <span id="subtotal"></span>
+                                    </div>
+                                </div>
+
+                                <div class="input-group">
+                                    <label class="sub-total-lable" id="subtotal_lable_discount"
+                                        data-i18n="purchase.total_preview_discount">Discount</label>
+                                    <img src="assets/image/invoice/change.png" height="30"
+                                        class="hide-t me-2 no-use-fluid"
+                                        onclick="togglePercentagMoneySym('discountSymbol')" data-bs-toggle="tooltip"
+                                        title="Select Discount Type: Choose 'Flat' for a fixed amount or 'Percentage' based on your input.">
+                                    <span class="sy ms-1" id="discountSymbol"
+                                        onclick="togglePercentagMoneySym('discountSymbol')">$</span>
+                                    <input style="width: 100px;" type="number" class="form-control" id="discount"
+                                        value="0" min="0" oninput="handleEmpty(this); calculateInvoice()">
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="input-group">
+                                        <label class="sub-total-lable" id="subtotal_lable_tax"
+                                            data-i18n="purchase.total_preview_tax">Tax</label>
+                                        <img src="assets/image/invoice/change.png" height="30"
+                                            class="hide-t me-2 no-use-fluid"
+                                            onclick="togglePercentagMoneySym('taxSymbol')" data-bs-toggle="tooltip"
+                                            title="Select Tax Type: Choose 'Flat' for a fixed amount or 'Percentage' (0-100) based on your input.">
+                                        <span class="sy ms-1" id="taxSymbol"
+                                            onclick="togglePercentagMoneySym('taxSymbol')">$</span>
+                                        <input style="width: 100px;" type="number" class="form-control" id="tax"
+                                            value="0" min="0" max="100" oninput="handleEmpty(this); calculateInvoice()">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="input-group">
+                                        <label class="sub-total-lable" id="subtotal_lable_shipping"
+                                            data-i18n="purchase.total_preview_shipping">Shipping</label>
+                                        <img src="assets/image/invoice/change.png" height="30"
+                                            class="hide-t me-2 no-use-fluid"
+                                            onclick="togglePercentagMoneySym('shippingSymbol')" data-bs-toggle="tooltip"
+                                            title="Select Shipping Type: Choose 'Flat' for a fixed amount or 'Percentage' based on your input.">
+                                        <span class="sy ms-1" id="shippingSymbol"
+                                            onclick="togglePercentagMoneySym('shippingSymbol')">$</span>
+                                        <input style="width: 100px;" type="number" class="form-control" id="shipping"
+                                            value="0" min="0" oninput="handleEmpty(this); calculateInvoice()">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="input-group total">
+                                        <label class="sub-total-lable" id="subtotal_lable_total"
+                                            data-i18n="purchase.total_preview_total">Total</label>
+                                        <span id="total"></span>
+                                    </div>
+                                </div>
+                                <!-- <hr>
+
+                                <div class="form-group row">
+                                    <div class="input-group">
+                                        <label class="sub-total-lable" id="subtotal_lable_amount_paid">Amount
+                                            Paid</label>
+                                        <span class="sya"></span>
+                                        <input style="width: 100px;" class="form-control" type="number" id="amount-paid"
+                                            value="0" min="0" oninput="handleEmpty(this); calculateInvoice()">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="input-group total">
+                                        <label class="sub-total-lable" id="subtotal_lable_balance_due">Balance
+                                            Due</label>
+                                        <span id="balance-due"></span>
+                                    </div>
+                                </div> -->
+
+
+
+                            </div>
+                        </div>
+                        <!-- end subtotal -->
+                    </div>
+                    <hr>
+
+                    <!-- Bank Details,UPI QR code -->
+                    <div class="container">
+                        <div class="row my-4">
+                            <!-- bank details show  -->
+                            <div class="col-sm-12 col-md-12 col-lg-6 hidden" id="bank-show">
+                                <div class="bank-details">
+                                    <h6 class="bank-details-title">Bank Details</h6>
+                                    <p><strong>Account Name: </strong>CodeHunger Private Limited</p>
+                                    <p><strong>Account Number: </strong>124531</p>
+                                    <p><strong>IFSC: </strong>82H</p>
+                                    <p><strong>Account Type: </strong>Current</p>
+                                    <p><strong>Bank: </strong>ICICI</p>
+                                </div>
+                            </div>
+                            <!--  bank details show end -->
+                            <!--  bank details user input -->
+                            <div class="col-sm-12 col-md-12 col-lg-6 d-none" id="bank-input">
+                                <div class="bank-details">
+                                    <h6 class="bank-details-title" id="bank_details_lable_title"
+                                        data-i18n="purchase.bank_details_heading">Bank Details</h6>
+                                    <div class="bank-form-group">
+                                        <label for="accountName" class="" id="bank_details_lable_account_name"
+                                            data-i18n="purchase.bank_details_account_name">Account
+                                            Name </label>
+                                        <input type="text" class="form-control" id="accountName"
+                                            placeholder="Enter Account Name"
+                                            data-i18n-placeholder="purchase.placeholder_bank_details_lable_account_name">
+                                    </div>
+                                    <div class="bank-form-group">
+                                        <label for="accountNumber" class="" id="bank_details_lable_account_number"
+                                            data-i18n="purchase.bank_details_account_number">Account Number </label>
+                                        <input type="number" class="form-control" id="accountNumber"
+                                            placeholder="Enter Account Number"
+                                            data-i18n-placeholder="purchase.placeholder_bank_details_account_number">
+                                    </div>
+                                    <div class="bank-form-group">
+                                        <label for="ifsc" class="" id="bank_details_lable_ifsc"
+                                            data-i18n="purchase.bank_details_ifsc">IFSC </label>
+                                        <input type="text" class="form-control" id="ifsc" placeholder="Enter IFSC"
+                                            data-i18n-placeholder="purchase.placeholder_bank_details_lable_ifsc">
+                                    </div>
+
+                                    <div class="bank-form-group">
+                                        <label for="accountType" id="bank_details_account_type"
+                                            data-i18n="purchase.bank_details_account_type">Account Type</label>
+                                        <select class="form-control" id="accountTypeSelect"
+                                            onchange="handleAccountTypeChange()">
+                                            <option data-i18n="purchase.bank_details_account_type_option_select_type"
+                                                value="">Select Type</option>
+                                            <option data-i18n="purchase.bank_details_account_type_option_saving"
+                                                value="Saving">Saving</option>
+                                            <option data-i18n="purchase.bank_details_account_type_option_current"
+                                                value="Current">Current</option>
+                                            <option data-i18n="purchase.bank_details_account_type_option_other"
+                                                value="other">Other</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="bank-form-group">
+                                        <label for="accountType"></label>
+                                        <input type="hidden" class="form-control mt-2 d-done" id="accountType"
+                                            placeholder="Specify Account Type"
+                                            data-i18n-placeholder="purchase.placeholder_bank_details_specify_account_type">
+                                    </div>
+
+
+                                    <div class="bank-form-group">
+                                        <label for="bank" class="" id="bank_details_bank_name"
+                                            data-i18n="purchase.bank_details_bank">Bank </label>
+                                        <input type="text" class="form-control" id="bank" placeholder="Enter Bank Name"
+                                            data-i18n-placeholder="purchase.placeholder_bank_details_bank">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- bank details user input end -->
+
+                            <!-- UPI QR code -->
+                            <div class="col-sm-12 col-md-6 col-lg-6">
+                                <div id="upi-input" class="d-none">
+                                    <label for="upi-id" class="upi-id-lable" data-i18n="purchase.upi_enter_id">Enter UPI
+                                        ID:</label>
+                                    <input type="text" class="form-control" id="upi-id" placeholder="example@upi"
+                                        data-i18n-placeholder="purchase.placeholder_upi_enter_id">
+                                </div>
+                                <div class="hidden mt-3" id="upi-show">
+                                    <h6 class="text-center" data-i18n="purchase.upi_scan_to_pay">UPI - Scan to Pay</h6>
+                                    <div id="upi-qrcode"></div>
+                                    <div id="upi-id-show">
+                                        <p><strong>codehunger@2132</strong></p>
+                                    </div>
+                                </div>
+
+                                <!-- authorized signatory -->
+                                <div class="authorized-signatory-parent d-none" id="authorized-signatory">
+                                    <div class="authorized-signatory">
+                                        <span class="mx-3" id="upload-image-div">
+                                            <img src="assets/image/invoice/upload-image.png" />
+                                            <span data-i18n="purchase.signatory_add">+ Add Authorized Signatory
+                                            </span><br>
+                                            <span data-i18n="purchase.signatory_recommended">Recommended size: 300x300
+                                                pixels
+                                            </span>
+                                        </span>
+                                        <input type="file" id="signatoryInput" accept="image/*">
+
+                                        <img id="signatoryImage" alt="Authorized Signatory" style="display: none;">
+                                        <button id="removeSignatory" class="remove-signatory" style="display: none;"
+                                            aria-label="Remove Signatory">&times;</button>
+                                    </div>
+                                    <!-- touch pad signature -->
+                                    <canvas id="signatureCanvas" width="300" height="150"
+                                        style="border: 1px solid #ccc;"></canvas>
+                                    <div class="d-flex justify-content-between my-2">
+                                        <button class="btn-email btn me-2 col-md-6" style="height: 50%;width: 60%;"
+                                            id="saveSignature"><i class="fas fa-save me-2"></i><span data-i18n="purchase.signatory_save_button">Save
+                                            Signature</span></button>
+                                        <button class="btn-pdf btn me-2 col-md-6" style="height: 50%;width: 40%;"
+                                            id="clearCanvas"><i class="fas fa-eraser me-2"></i><span data-i18n="purchase.signatory_close_button">Clear</span></button>
+                                    </div>
+                                    <!-- end touch pad signature -->
+                                    <p class="text-center sub-total-lable" id="Authorized-Text"
+                                        data-i18n="purchase.signatory_text">Authorized Signatory</p>
+                                </div>
+                                <!-- end authorized signatory -->
+
+                            </div>
+                            <!-- UPI QR code End -->
+
+                            <!-- authorized signatory -->
+                            <!-- <div class="col-6 mt-5">
+                              
+                            </div> -->
+                            <!-- end authorized signatory -->
+
+
+                        </div>
+                    </div>
+                    <!-- End Bank Details,UPI QR code -->
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-12 col-lg-3">
+                <!-- <div class="d-flex justify-content-end my-2"> -->
+
+                <button id="downloadInvoice" class="btn-pdf btn me-2 col-md-12">
+                    <i class="fas fa-file-download me-2"></i> <span data-i18n="purchase.download_pdf_button">Download
+                        PDF</span>
+                </button>
+                <button id="chooseTemplatebtn" class="btn-pdf btn ml-2 mt-2 me-2 col-md-12">
+                    <i class="fas fa-solid fa-light fa-hand-pointer me-2"></i> <span
+                        data-i18n="purchase.choose_template_button">Choose
+                        Template</span>
+                </button>
+                <!-- </div> -->
+                <div class="my-2">
+                    <div class="card-one p-5">
+                        <div class="card-body-one">
+                            <!-- <p class="side-card-heading" data-i18n="purchase.setting_heading" setting_heading>Purchase
+                                Order Setting</p> -->
+
+                                 <h5 class="text-lg font-semibold mb-4 flex items-center gap-2"
+                                data-i18n="purchase.setting_heading" >Manage Setting</h5>
+                            <div class="custom-switch settings-show-margin-label d-flex align-items-start">
+
+                                 <label class="custom-switch-wrapper">
+                                    <input type="checkbox" id="save-invoice-toggle" class="custom-switch-input" checked>
+                                    <span class="custom-switch-slider"></span>
+                                </label>
+
+                                <label for="save-invoice-toggle" class="form-label font-bold-600 save-purchase-label mb-2"
+                                    data-i18n="purchase.setting_save_documents">Save
+                                    Purchase:</label>
+                               
+                            </div>
+
+                            <div class="custom-switch settings-show-margin-label d-flex align-items-start">
+
+                                  <label class="custom-switch-wrapper">
+                                    <input type="checkbox" id="save-bank-toggle" class="custom-switch-input" checked>
+                                    <span class="custom-switch-slider"></span>
+                                </label>
+
+                                <label for="save-bank-toggle" class="form-label font-bold-600 save-purchase-label mb-2"
+                                    data-i18n="purchase.setting_show_bank">Show Bank
+                                    Details :</label>
+                              
+                            </div>
+
+                            <div class="custom-switch settings-show-margin-label d-flex align-items-start">
+
+                                 <label class="custom-switch-wrapper">
+                                    <input type="checkbox" id="save-upi-toggle" class="custom-switch-input" checked>
+                                    <span class="custom-switch-slider"></span>
+                                </label>
+
+                                <label for="save-upi-toggle" class="form-label font-bold-600 save-purchase-label mb-2"
+                                    data-i18n="purchase.setting_show_upi">Show UPI ID
+                                    :</label>
+                               
+                            </div>
+
+                            <div class="custom-switch settings-show-margin-label d-flex align-items-start">
+
+                                 <label class="custom-switch-wrapper">
+                                    <input type="checkbox" id="save-signature-toggle" class="custom-switch-input"
+                                        checked>
+                                    <span class="custom-switch-slider"></span>
+                                </label>
+
+                                <label for="save-signature-toggle" class="form-label font-bold-600 save-purchase-label mb-2"
+                                    data-i18n="purchase.setting_show_signature">Show
+                                    Signature :</label>
+                               
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="m-1 form-label font-bold-600 select-currency-label "
+                                    data-i18n="purchase.setting_select_currency">Select Currency :-</label>
+                                <select id="currency" class="form-control" name="currency" onchange="updateCurrency()">
+                                    <option value="0" disabled data-i18n="purchase.setting_select_currency">Select
+                                        Currency</option>
+                                    <option value="$">USD </option>
+                                    <option value="€">EUR </option>
+                                    <option value="¥">JPY </option>
+                                    <option value="£">GBP </option>
+                                    <option value="A$">AUD </option>
+                                    <option value="C$">CAD </option>
+                                    <option value="CHF">CHF </option>
+                                    <option value="CNY">CNY </option>
+                                    <option value="₩">KRW </option>
+                                    <option value="₹">INR </option>
+                                </select>
+                            </div>
+
+                            <div class="mt-3" id="clientSelectDiv">
+                                <label class="m-1 form-label font-bold-600 select-order-by-label"
+                                    data-i18n="purchase.setting_select_client">Select Order To</label>
+                                <div>
+                                    <select id="clientSelect" class="form-control"
+                                        onchange="populateClientDetails(this.value)">
+                                        <option value="" data-i18n="purchase.setting_select_client_option">-- Select
+                                            Order By --</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="mt-3" id="fromsSelectDiv">
+                                <label class="m-1 form-label font-bold-600 select-order-to-label"
+                                    data-i18n="purchase.setting_select_from">Select Order By</label>
+                                <div>
+                                    <select id="fromsSelect" class="form-control"
+                                        onchange="populateFromsDetails(this.value)">
+                                        <option value="" data-i18n="purchase.setting_select_from_option">-- Select Order
+                                            To --</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="mt-3">
+                                <label for="primaryColorPicker" class="m-1 form-label font-bold-600 choose-primary-color-label"
+                                    data-i18n="purchase.setting_choose_primary_color">Choose Primary Color:</label>
+                                <input type="color" class="form-control form-control-color" id="primaryColorPicker"
+                                    value="#048b9f" title="Choose your color">
+                            </div>
+                            <div class="mt-3">
+                                <label class="m-1 form-label font-bold-600 select-primary-color-label"
+                                    data-i18n="purchase.setting_select_primary_color">Select Primary
+                                    Color:</label>
+                                <div id="colorOptions">
+                                    <button class="color-swatch" style="background-color: #048b9f;"
+                                        data-color="#048b9f"></button>
+                                    <button class="color-swatch" style="background-color: #333333;"
+                                        data-color="#333333"></button>
+                                    <button class="color-swatch" style="background-color: #555555;"
+                                        data-color="#555555"></button>
+                                    <button class="color-swatch" style="background-color: #455A64;"
+                                        data-color="#455A64"></button>
+
+                                    <button class="color-swatch" style="background-color: #C62828;"
+                                        data-color="#C62828"></button>
+                                    <button class="color-swatch" style="background-color: #D81B60;"
+                                        data-color="#D81B60"></button>
+                                    <button class="color-swatch" style="background-color: #7B1FA2;"
+                                        data-color="#7B1FA2"></button>
+                                    <button class="color-swatch" style="background-color: #4527A0;"
+                                        data-color="#4527A0"></button>
+
+                                    <button class="color-swatch" style="background-color: #1565C0;"
+                                        data-color="#1565C0"></button>
+                                    <button class="color-swatch" style="background-color: #0277BD;"
+                                        data-color="#0277BD"></button>
+                                    <button class="color-swatch" style="background-color: #00695C;"
+                                        data-color="#00695C"></button>
+                                    <button class="color-swatch" style="background-color: #2E7D32;"
+                                        data-color="#2E7D32"></button>
+
+                                    <button class="color-swatch" style="background-color: #558B2F;"
+                                        data-color="#558B2F"></button>
+                                    <button class="color-swatch" style="background-color: #f67280;"
+                                        data-color="#f67280"></button>
+                                    <button class="color-swatch" style="background-color: #6c5ce7;"
+                                        data-color="#6c5ce7"></button>
+                                    <button class="color-swatch" style="background-color: #74b9ff;"
+                                        data-color="#74b9ff"></button>
+
+                                    <button class="color-swatch" style="background-color: #55efc4;"
+                                        data-color="#55efc4"></button>
+                                    <button class="color-swatch" style="background-color: #048b9f;"
+                                        data-color="#048b9f"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Footer Section -->
+    <div id="footer"></div>
+    <button id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- src use pdf download-->
+    <script src="assets/js/html2canvas_1.4.1.min.js.js"></script>
+    <script src="assets/js/jspdf_2.5.1.umd.min.js"></script>
+    <!-- upi qr code create -->
+    <script src="assets/js/qrcode_1.0.0.min.js"></script>
+
+    <script src="assets/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="assets/js/popper.min.js" crossorigin="anonymous"></script>
+    <script src="assets/js/jquery.js" crossorigin="anonymous"></script>
+    <script src="/assets/cdn/bootstrap-toggle/js/bootstrap-toggle.min.js"></script>
+    <script src="/assets/cdn/sweetalert/js/sweetalert2.min.js"></script>
+    <script src="assets/js/js.js" crossorigin="anonymous"></script>
+
+
+    <script src="assets/purchase_order_generator/js/purchase_order_generator.js" crossorigin="anonymous"></script>
+    <script src="assets/purchase_order_generator/js/purchase_order_generator_improve.js"
+        crossorigin="anonymous"></script>
+    <script src="assets/purchase_order_generator/js/purchase_order_generator_page.js" crossorigin="anonymous"></script>
+    <script src="assets/purchase_order_generator/js/purchase_order_generator-edit.js" crossorigin="anonymous"></script>
+    <script src="/assets/js/lang.js" crossorigin="anonymous" defer></script>
+    <script src="/assets/js/loading-spinner.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+<!-- Purchase Order Generator -->

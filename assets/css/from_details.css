@@ -1,0 +1,207 @@
+:root {
+  --primary-color: #048b9f;
+  --primary-light-color: #048b9f21;
+  --w-color: white;
+  --black: #000000;
+  --card-color: white;
+  --table-row-color: black;
+  --lable-color: #024b56;
+  --primary-fix-color: #048b9f;
+  --primary-input-bg: #048b9f0f;
+}
+
+.form-control {
+  transition: box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  box-shadow: 0px 0px 2px 2px var(--primary-light-color);
+  border-color: var(--primary-light-color);
+  outline: none;
+}
+
+.card-header-color {
+  background-color: var(--primary-light-color);
+}
+.card-header-color h5 {
+  color: var(--primary-color) !important;
+}
+.table-h {
+  color: var(--primary-color) !important;
+}
+.card-body-color {
+  background-color: var(--card-color);
+}
+.card-body-color {
+  background-color: var(--card-color);
+}
+.card-body-color label {
+  color: var(--lable-color);
+}
+
+/* client-details table heading */
+.client-details-table-heading {
+  background-color:  var(--primary-fix-color) !important;
+  color: white;
+}
+/* client-details table heading */
+
+/* search  */
+#client-details-table_filter {
+  margin-bottom: 10px !important;
+}
+/* end search  */
+
+/* edit-btn  button */
+.edit-btn {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--w-color);
+  font-weight: 500;
+}
+.edit-btn:hover {
+  color: var(--primary-color);
+  background-color: var(--primary-light-color);
+  border-color: var(--primary-light-color);
+}
+.edit-btn:focus {
+  color: var(--primary-color);
+  background-color: var(--primary-light-color);
+  border-color: var(--primary-light-color);
+  outline: none !important;
+}
+/*end  edit-btn button */
+
+.add-btn {
+  color: var(--w-color);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  font-weight: 500;
+  border-radius: 10px;
+  padding: 10px 60px;
+  font-size: 20px;
+  margin: 10px 0px;
+}
+.add-btn:hover {
+  background-color: var(--primary-light-color);
+  border-color: var(--primary-light-color);
+  color:  var(--primary-fix-color);
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  color: var(--table-row-color) !important;
+}
+.table-striped > tbody > tr:nth-of-type(even) {
+  color: var(--table-row-color) !important;
+}
+
+.import-btn {
+  color: var(--primary-color);
+  background-color: var(--w-color);
+  border-color: var(--primary-color);
+  font-weight: 500;
+  border-radius: 10px;
+  padding: 10px 25px;
+}
+.import-btn:hover {
+  background-color: var(--primary-light-color);
+  border-color: var(--primary-light-color);
+  color:  var(--primary-fix-color);
+}
+
+.export-btn {
+  color: var(--w-color);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  font-weight: 500;
+  border-radius: 10px;
+  padding: 10px 25px;
+}
+.export-btn:hover {
+  background-color: var(--primary-light-color);
+  border-color: var(--primary-light-color);
+  color:  var(--primary-fix-color);
+}
+
+/* datatable */
+table.dataTable {
+  border-radius: 15px;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  margin: 40px 0px !important;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2),
+    0px 6px 20px 6px rgba(0, 0, 0, 0.19);
+}
+
+table.dataTable thead th {
+  padding: 20px !important;
+  text-align: center;
+  vertical-align: middle;
+}
+
+table.dataTable tbody td {
+  padding: 20px !important;
+  text-align: left;
+  vertical-align: middle;
+}
+
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+  border-color: #ffffff;
+  border-style: solid;
+  border-width: 0;
+}
+
+@media (max-width: 768px) {
+  table.dataTable thead th,
+  table.dataTable tbody td {
+    padding: 10px;
+  }
+}
+
+/* Default styling for table rows */
+table.dataTable tbody tr {
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+/* Apply shadow when a row is clicked */
+table.dataTable tbody tr.clicked-row {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transform: scale(1.02); /* Optional: slight scaling effect */
+  background-color: #f8f9fa; /* Optional: highlight clicked row */
+}
+/* end datatable */
+
+.form-control {
+  background-color: var(--primary-input-bg);
+  border-color:  var(--primary-fix-color);
+}
+
+.card {
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2),
+    0px 6px 20px 6px rgba(0, 0, 0, 0.19);
+  border-radius: 20px;
+}
+.card-heading {
+  color: var(--lable-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 700;
+  margin: 30px 0px;
+}
+.card-body {
+  border-radius: 20px !important;
+}
+.fileds-container {
+  margin: 10px 60px;
+}
+#from-details-table_filter {
+  margin-bottom: 10px !important;
+}

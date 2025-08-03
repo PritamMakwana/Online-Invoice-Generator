@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Poppins Font -->
+    <link href="assets/cdn/Font/poppins.css" rel="stylesheet">
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Google Font: Space Grotesk -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/upwork.css" rel="stylesheet">
+    <link href="assets/css/upwork_responsive.css" rel="stylesheet">
+    <link href="/assets/cdn/bootstrap-toggle/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link href="/assets/cdn/sweetalert/css/sweetalert2.min.css" rel="stylesheet">
+
+    <title>Upwork Fee Calculator | Online Invoice Generator</title>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header id="header"></header>
+    <!-- contact -->
+
+    <!-- header -->
+    <div class="header-gradient-bg row">
+        <div class="col-sm-0 col-md-0 col-lg-2">
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-8">
+            <h1 class="header-heading" data-i18n="tool_upwork.page_heading">Upwork Fee Calculator</h1>
+        </div>
+    </div>
+    <!-- end header -->
+
+    <div class="section-title mt-3">
+        <h1 data-i18n="tool_upwork.page_title">Free Upwork Tools to Boost Your Freelance Success</h1>
+        <p data-i18n="tool_upwork.page_description">Elevate your Upwork game with our free tools designed for
+            freelancers. Optimize your profile, discover job
+            opportunities, and manage projects effortlessly. Perfect for enhancing visibility and productivity on
+            Upwork,
+            our tools are essential for freelancers aiming to excel. Try them now for better results!</p>
+    </div>
+
+    <div class="container">
+        <div class="row header-div">
+            <div class="col-lg-6 col-sm-12 col-md-12 my-2 details" data-i18n-html="tool_upwork.sec_1">
+                <h1>Free Upwork Calculator Tool</h1>
+                <p>This free and user-friendly tool is designed to help both freelancers and clients on Upwork
+                    understand
+                    the financial implications of their transactions. Whether you're negotiating a contract or simply
+                    budgeting your next project, this tool provides clarity on the fees charged by Upwork, enabling you
+                    to
+                    make informed decisions.</p>
+
+                <h5>No Sign-Up Required</h5>
+                <p>Access the tool anytime without the need to create an account or sign up. It’s completely free to use
+                    and
+                    doesn’t require any personal information, ensuring your privacy is protected.</p>
+
+                <h5>Mobile-Friendly Interface</h5>
+                <p>Use the tool on the go with its mobile-friendly design. Whether you're using a smartphone, tablet, or
+                    desktop, the interface is optimized for all devices.
+                </p>
+            </div>
+            <div class="col-lg-6 col-sm-12 col-md-12 d-flex justify-content-end my-2 header-image">
+                <img src="assets/image/tools/upwork/upwork-banner.jpg" alt="Upwork Image">
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Steps Area -->
+    <section class="">
+        <div class="container" data-i18n-html="tool_upwork.sec_2">
+            <div class="section-title mt-4">
+                <h3>How to Use the Upwork Fee Calculator</h3>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 col-sm-12 col-md-6">
+                    <div class="single-featured-box">
+                        <div class="icon">
+                            <img class="p-1 mb-2" style="height: 50px;" src="assets/image/tools/upwork/enter.png" />
+                        </div>
+                        <h5>1.Enter Invoice Total </h5>
+                        <p>Type your invoice amount in the "Enter your invoice total" field.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-12 col-md-6">
+                    <div class="single-featured-box">
+                        <div class="icon">
+                            <img class="p-1 mb-2" style="height: 50px;" src="assets/image/tools/upwork/enter (1).png" />
+                        </div>
+                        <h5>2.Enter Lifetime Billings</h5>
+                        <p>Enter the total amount you’ve billed this client on Upwork in the "Enter the lifetime Upwork
+                            billings" field.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-12 col-md-12 ">
+                    <div class="single-featured-box">
+                        <div class="icon">
+                            <img class="p-2 mb-2" style="height: 50px;"
+                                src="assets/image/tools/upwork/number-blocks.png" />
+                        </div>
+                        <h5>3.Calculate </h5>
+                        <p> Click the "Calculate" button.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-12 col-md-12 ">
+                    <div class="single-featured-box">
+                        <div class="icon">
+                            <img class="p-2 mb-2" style="height: 50px;" src="assets/image/tools/upwork/view.png" />
+                        </div>
+                        <h5>4.View Results:</h5>
+                        <p>Check your earnings, the Upwork fee, and the fee percentage displayed below.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- End Steps Area -->
+
+    <div class="container my-5">
+        <div class="row">
+
+            <div class="col-lg-6 col-md-12 col-sm-12 my-1">
+
+                <div class="card">
+                    <div class="card-header">
+                        <h1 class="text-center my-3" style="color: white;" data-i18n="tool_upwork.sec_3_title">Upwork
+                            Fee Calculator</h1>
+                    </div>
+
+                    <div class="m-3">
+                        <form id="calculator-form">
+                            <div class="form-group">
+                                <label class="label" data-i18n="tool_upwork.sec_3_total">Enter your invoice
+                                    total:</label>
+                                <input class="form-control" type="number" id="invoiceTotal" name="invoiceTotal"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label class="label" data-i18n="tool_upwork.sec_3_life">Enter the lifetime Upwork
+                                    billings for this
+                                    client:</label>
+                                <input class="form-control" type="number" id="lifetimeBillings" name="lifetimeBillings"
+                                    required>
+                            </div>
+                            <button class="btn btn-submit my-2 col-12 " type="submit"
+                                data-i18n="tool_upwork.sec_3_calculate_btn">Calculate</button>
+                        </form>
+
+                        <div class="results mt-4 p-3 rounded bg-light">
+                            <h5 class="text-secondary" data-i18n="tool_upwork.sec_3_results_title">Results:</h5>
+                            <p class="mb-1"><span data-i18n="tool_upwork.sec_3_results_make">With Upwork you’ll make:</span>
+                                <span id="earnings" class="fw-bold " style="color:  #048b9f;">0</span></p>
+                            <p class="mb-1"><span data-i18n="tool_upwork.sec_3_results_takes">Because Upwork takes:
+                                </span><span id="upworkFee" class="fw-bold" style="color:  #048b9f;">0</span></p>
+                            <p class="mb-0"><span data-i18n="tool_upwork.sec_3_results_fee">Fee percentage: </span><span
+                                    id="feePercentage" class="fw-bold" style="color:  #048b9f;">0</span>%</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12 col-sm-12 my-1">
+                <div class="card"  data-i18n-html="tool_upwork.benefits">
+                    <div class="card-header d-flex justify-content-center mb-1">
+                        <h3 class="my-1 " style="color: white;">Benefits of Upwork Fee Calculator</h3>
+                    </div>
+                    <div class="m-3 benefits">
+                        <h6><strong>Accurate Financial Planning: </strong></h6>
+                        <p><strong>For Freelancers:</strong> Knowing your exact take-home pay allows for better
+                            financial
+                            planning, including budgeting for expenses, savings, and taxes.</p>
+                        <p><strong>For Clients:</strong>Understanding the total cost helps in planning project budgets
+                            accurately, ensuring that all financial aspects are covered from the start.</p>
+                        <h6><strong>Time-Saving: </strong></h6>
+                        <p>Instead of manually calculating fees or searching for Upwork's fee structure, this tool
+                            provides
+                            instant results with just a few clicks. This saves time and effort, allowing users to focus
+                            on
+                            more important aspects of their work.</p>
+                        <h6><strong>Informed Decision-Making: </strong></h6>
+                        <p>The calculator allows both freelancers and clients to explore different contract amounts and
+                            fee
+                            tiers, enabling them to make informed decisions during contract negotiations. This can help
+                            in
+                            setting rates that are fair and acceptable to both parties.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- contact end  -->
+    <!-- Footer Section -->
+    <div id="footer"></div>
+    <button id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <script src="assets/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="assets/js/popper.min.js" crossorigin="anonymous"></script>
+    <script src="assets/js/jquery.js" crossorigin="anonymous"></script>
+    <script src="/assets/cdn/bootstrap-toggle/js/bootstrap-toggle.min.js"></script>
+    <script src="/assets/cdn/sweetalert/js/sweetalert2.min.js"></script>
+    <script src="assets/js/js.js" crossorigin="anonymous"></script>
+
+    <script src="assets/js/upwork.js" crossorigin="anonymous"></script>
+    <script src="/assets/js/lang.js" crossorigin="anonymous" defer></script>
+    <script src="/assets/js/loading-spinner.js" crossorigin="anonymous" ></script>
+
+</body>
+
+</html>

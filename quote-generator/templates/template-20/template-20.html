@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Poppins Font -->
+    <link href="/assets/cdn/Font/poppins.css" rel="stylesheet">
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Google Font: Space Grotesk -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/template_20.css" rel="stylesheet">
+    <link href="/templates/assets/all.css" rel="stylesheet">
+
+    <link href="/assets/cdn/bootstrap-toggle/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <title>Template 20 | Online Invoice Generator</title>
+</head>
+
+<body>
+    <div class="modal fade show" id="LoadSpinner" tabindex="-1" role="dialog" aria-labelledby="emailModalLabel"
+        aria-hidden="true" style="background: white !important;display: none;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="d-flex align-items-center">
+                        <strong><span data-i18n="layout.model_download_pdf">Download PDF...</span></strong>
+                        <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container my-2">
+        <div class="row mobile-reverse-show">
+            <div class="d-flex justify-content-between">
+                <button id="downloadInvoice" class="btn-pdf btn me-2 col-md-3 mt-5">
+                    <i class="fas fa-file-pdf"></i> Download PDF
+                </button>
+                <button id="backToPage" class="btn-pdf btn me-2 col-md-3 mt-5">
+                    <i class="fas fa-arrow-left"></i> Back
+                </button>
+            </div>
+
+            <div class="col-sm-12 col-md-12 col-lg-12" id="invoice-size">
+
+                <!-- invoice pdf -->
+                <div class="card container card-border my-5" id="invoice">
+                    <div class="row ">
+                        <!-- header section -->
+                        <div class="header-bg row">
+                            <div class="col-md-5 row">
+                                <div class="col-md-6">
+                                    <div class="invoice-logo mt-4">
+                                        <center>
+                                            <span>
+                                                <img id="logo" src="" />
+                                            </span>
+                                        </center>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group from-group-height col-md-12 heading-section">
+                                        <h1 class="invoice-title d-flex justify-content-start mt-5 mb-2"
+                                            id="invoice-heading">
+                                        </h1>
+                                        <!-- <p class="invoice-new-address d-flex justify-content-start"></p>
+                                        <p class="invoice-new-contact-no d-flex justify-content-start"></p> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 row">
+                            </div>
+                            <div class="col-md-4 row">
+                                <!-- <div class="col-md-6 row "> -->
+                                <div class="col-md-12  from-section" style="display: flex;
+                                    flex-direction: column;
+                                    justify-content: space-evenly;
+                                    align-items: stretch;">
+                                    <div class="form-group from-group-height row">
+
+                                        <label class="col-md-4 bill-to-info-lable"
+                                            id="terms_lable_number">Number</label>
+                                        <div class="col-md-8">
+                                            <input type="text"
+                                                class="parent-hide form-control-plaintext form-control from-info-input terms_number"
+                                                id="terms_number">
+                                        </div>
+                                    </div>
+                                    <div class="form-group from-group-height row">
+
+                                        <label class="col-md-4 bill-to-info-lable" id="terms_lable_date">Date</label>
+                                        <div class="col-md-8">
+                                            <input type="text"
+                                                class="parent-hide form-control-plaintext form-control from-info-input terms_date"
+                                                id="terms_date">
+                                        </div>
+                                    </div>
+                                    <div class="form-group from-group-height row">
+
+                                        <label class="col-md-4 bill-to-info-lable"
+                                            id="terms_lable_terms_days">Terms</label>
+                                        <div class="col-md-8">
+                                            <input type="text"
+                                                class="parent-hide form-control-plaintext form-control from-info-input terms_date"
+                                                id="terms">
+                                        </div>
+                                    </div>
+                                    <div class="form-group  row">
+
+                                        <label class="col-md-4 bill-to-info-lable" id="terms_lable_due_date">Due
+                                            Date</label>
+                                        <div class="col-md-8">
+                                            <input type="text"
+                                                class="parent-hide form-control-plaintext form-control from-info-input terms_date"
+                                                id="dueDate">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- </div> -->
+                            </div>
+                        </div>
+                        <!-- end header section -->
+
+                        <!-- Bank Details,UPI QR code -->
+                        <div class="container">
+                            <div class="row my-4">
+                                <!-- bank details show  -->
+                                <div class="col-sm-12 col-md-12 col-lg-6" id="bank-show">
+                                    <div class="bank-details" id="bank-details">
+                                    </div>
+                                </div>
+                                <!--  bank details show end -->
+
+                                <div class="col-sm-12 col-md-12 col-lg-6 mt-5" id="authorized-div">
+                                    <div class="authorized-signatory-parent">
+                                        <div class="authorized-signatory">
+                                            <img id="signatory" src="" />
+                                        </div>
+                                        <p class="text-center sub-total-lable" id="Authorized-Text"
+                                            style="font-weight: 500;margin-top: -10px;font-size: 12px;">
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- UPI QR code -->
+                                <div class="col-sm-12 col-md-12 col-lg-6  mt-5" id="upi-show">
+                                </div>
+                                <!-- UPI QR code End -->
+
+                            </div>
+                        </div>
+                        <!-- End Bank Details,UPI QR code -->
+
+                        <hr class="hr-t4" style="margin-bottom: 30px !important;">
+                        <!-- from -->
+                        <div class="col-md-6 row header-left">
+                            <div class="col-md-12 from-section">
+                                <div class="form-group  row">
+
+                                    <label class="col-md-4  from-label" id="from_lable_title">From</label>
+                                    <div class="col-md-8">
+                                        <input type="hidden" class="" value="101">
+                                    </div>
+
+                                </div>
+                                <div class="form-group from-group-height row">
+
+                                    <label class="col-md-4 from-info-lable" id="from_lable_name">Name</label>
+                                    <div class="col-md-8">
+                                        <input type="text"
+                                            class="parent-hide form-control-plaintext form-control from-info-input"
+                                            id="from_name">
+                                    </div>
+
+                                </div>
+                                <div class="form-group from-group-height row">
+
+                                    <label class="col-md-4 from-info-lable" id="from_lable_email">Email</label>
+                                    <div class="col-md-8">
+                                        <input type="text"
+                                            class="parent-hide form-control-plaintext form-control from-info-input"
+                                            id="from_email">
+                                    </div>
+
+                                </div>
+                                <div class="form-group from-group-height row">
+
+                                    <label class="col-md-4 from-info-lable" id="from_lable_address"
+                                        style="align-items: center;">Address</label>
+                                    <div class="col-md-8">
+                                        <!-- <p id="from_address_input"></p> -->
+                                        <input type="text"
+                                            class="parent-hide form-control-plaintext form-control from-info-input"
+                                            id="from_address_input">
+                                    </div>
+
+                                </div>
+                                <div class="form-group from-group-height row">
+
+                                    <label class="col-md-4 from-info-lable" id="from_lable_phone">Phone</label>
+                                    <div class="col-md-8">
+                                        <input type="text"
+                                            class="parent-hide form-control-plaintext form-control from-info-input"
+                                            id="from_phone">
+                                    </div>
+
+                                </div>
+                                <div class="form-group from-group-height row">
+
+                                    <label class="col-md-4 from-info-lable" id="from_lable_business_number">Business
+                                        Number</label>
+                                    <div class="col-md-8">
+                                        <input type="text"
+                                            class="parent-hide form-control-plaintext form-control from-info-input"
+                                            id="from_business_number">
+                                    </div>
+
+                                </div>
+                                <div class="form-group from-group-height row">
+
+                                    <label class="col-md-4 from-info-lable" id="from_lable_website">Website</label>
+                                    <div class="col-md-8">
+                                        <input type="text"
+                                            class="parent-hide form-control-plaintext form-control from-info-input"
+                                            id="from_website">
+                                    </div>
+
+                                </div>
+                                <div class="form-group  row">
+
+                                    <label class="col-md-4 from-info-lable"
+                                        id="from_lable_business_owner_name">Owner</label>
+                                    <div class="col-md-8">
+                                        <input type="text"
+                                            class="parent-hide form-control-plaintext form-control from-info-input"
+                                            id="from_business_owner_name">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end from -->
+                        <!-- bill to -->
+                        <div class="col-md-6 row ">
+                            <div class="col-md-12 from-section">
+                                <div class="form-group  row">
+
+                                    <label class="col-md-4  bill-to-label" id="bill_to_lable_title">Bill To</label>
+                                    <div class="col-md-8">
+                                        <input type="hidden" class="" value="101">
+                                    </div>
+
+                                </div>
+                                <div class="form-group from-group-height row">
+
+                                    <label class="col-md-4 bill-to-info-lable" id="bill_to_lable_name">Name</label>
+                                    <div class="col-md-8">
+                                        <input type="text"
+                                            class="parent-hide form-control-plaintext form-control from-info-input"
+                                            id="bill_to_name">
+                                    </div>
+
+                                </div>
+                                <div class="form-group from-group-height row">
+
+                                    <label class="col-md-4 bill-to-info-lable" id="bill_to_lable_email">Email</label>
+                                    <div class="col-md-8">
+                                        <input type="text"
+                                            class="parent-hide form-control-plaintext form-control from-info-input"
+                                            id="bill-to-email">
+                                    </div>
+
+                                </div>
+                                <div class="form-group from-group-height row">
+
+                                    <label class="col-md-4 bill-to-info-lable"
+                                        id="bill_to_lable_address">Address</label>
+                                    <div class="col-md-8">
+                                        <!-- <p id="bill-to-address-input"></p> -->
+                                        <input type="text"
+                                            class="parent-hide form-control-plaintext form-control from-info-input"
+                                            id="bill-to-address-input">
+                                    </div>
+
+                                </div>
+                                <div class="form-group from-group-height row">
+
+                                    <label class="col-md-4 bill-to-info-lable" id="bill_to_lable_phone">Phone</label>
+                                    <div class="col-md-8">
+                                        <input type="text"
+                                            class="parent-hide form-control-plaintext form-control from-info-input"
+                                            id="bill-to-phone">
+                                    </div>
+
+                                </div>
+                                <div class="form-group from-group-height row">
+
+                                    <label class="col-md-4 bill-to-info-lable" id="bill_to_lable_mobile">Mobile</label>
+                                    <div class="col-md-8">
+                                        <input type="text"
+                                            class="parent-hide form-control-plaintext form-control from-info-input"
+                                            id="bill-to-mobile">
+                                    </div>
+
+                                </div>
+                                <div class="form-group from-group-height row">
+
+                                    <label class="col-md-4 bill-to-info-lable" id="bill_to_lable_fax">Fax</label>
+                                    <div class="col-md-8">
+                                        <input type="text"
+                                            class="parent-hide form-control-plaintext form-control from-info-input"
+                                            id="bill-to-fax">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end bill to -->
+                        <!-- <hr > -->
+
+                    </div>
+                    <!-- table -->
+                    <div id="table-container" class="mt-4">
+                    </div>
+                    <!-- table end -->
+                    <div class="row sub-total-section mt-4">
+                        <!-- Notes,Terms -->
+                        <div class="col-md-6 row notes-teams-left">
+                            <div class="col-md-12 notes-teams-section">
+                                <div class="form-group  row">
+
+                                    <div class="col-md-11">
+                                        <label class="notes-teams-lable" id="notes_lable_description">Notes</label>
+                                        <p id="notes"></p>
+                                        <label class="d-flex justify-content-start note-show"></label>
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                </div>
+                                <div class="form-group row">
+
+                                    <div class="col-md-11">
+                                        <label class="notes-teams-lable" id="terms_lable_description">Terms</label>
+                                        <p id="terms_p"></p>
+                                        <label class="d-flex justify-content-start term-show"></label>
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end Notes,Terms -->
+                        <!-- subtotal -->
+                        <div class="col-md-6 row sub-total-right">
+                            <div class="col-md-12 sub-total-section">
+                                <div class="form-group from-group-height row">
+                                    <div class="input-group">
+                                        <label class="sub-total-lable" id="subtotal_lable_subtotal">Subtotal</label>
+                                        <span id="subtotal">200 $</span>
+                                    </div>
+                                </div>
+                                <div class="form-group from-group-height row">
+                                    <div class="input-group">
+                                        <label class="sub-total-lable" id="subtotal_lable_discount">Discount</label>
+                                        <input style="width: 100px;" type="text" class="form-control" id="discount"
+                                            value="20" min="0">
+                                    </div>
+                                </div>
+                                <div class="form-group from-group-height row">
+                                    <div class="input-group">
+                                        <label class="sub-total-lable" id="subtotal_lable_tax">Tax</label>
+                                        <input style="width: 100px;" type="text" class="form-control" id="tax"
+                                            value="10" min="0" max="100">
+                                    </div>
+                                </div>
+                                <div class="form-group from-group-height row">
+                                    <div class="input-group">
+                                        <label class="sub-total-lable" id="subtotal_lable_shipping">Shipping</label>
+                                        <input style="width: 100px;" type="text" class="form-control" id="shipping"
+                                            value="30" min="0">
+                                    </div>
+                                </div>
+                                <div class="form-group from-group-height row">
+                                    <div class="input-group total">
+                                        <label class="sub-total-lable" id="subtotal_lable_total">Total</label>
+                                        <span id="total">40 $</span>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="form-group from-group-height row">
+                                    <div class="input-group">
+                                        <label class="sub-total-lable" id="subtotal_lable_amount_paid">Amount
+                                            Paid</label>
+                                        <input style="width: 100px;" class="form-control" type="text" id="amount-paid"
+                                            value="24 $" min="0">
+                                    </div>
+                                </div>
+                                <div class="form-group from-group-height row">
+                                    <div class="input-group total">
+                                        <label class="sub-total-lable" id="subtotal_lable_balance_due">Balance
+                                            Due</label>
+                                        <span id="balance-due">300 $</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end subtotal -->
+                    </div>
+                    <!--  -->
+                </div>
+                <!-- end invoice pdf -->
+            </div>
+
+        </div>
+    </div>
+
+    <!-- src use pdf download-->
+    <script src="/assets/js/html2canvas_1.4.1.min.js.js"></script>
+    <script src="/assets/js/jspdf_2.5.1.umd.min.js"></script>
+    <script src="/assets/cdn/html2pdf/html2pdf.bundle.min.js"></script>
+
+    <!-- upi qr code create -->
+    <script src="/assets/js/qrcode_1.0.0.min.js"></script>
+
+    <script src="/assets/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="/assets/js/popper.min.js" crossorigin="anonymous"></script>
+    <script src="/assets/js/jquery.js" crossorigin="anonymous"></script>
+    <script src="/assets/cdn/bootstrap-toggle/js/bootstrap-toggle.min.js"></script>
+    <script src="assets/js/template_20.js" crossorigin="anonymous"></script>
+    <script src="../assets/all.js" crossorigin="anonymous"></script>   
+         <script src="/assets/js/lang.js" crossorigin="anonymous" defer></script>
+    
+</body>
+
+</html>

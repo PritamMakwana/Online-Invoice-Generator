@@ -1,0 +1,332 @@
+:root {
+  --primary-color: #048b9f;
+  --primary-light-color: #048b9f21;
+  --w-color: white;
+
+  --primary-change-color: #048b9f;
+  --input-border-color: #ddd;
+  --input-bg-color: #f8f9fa;
+  --primary-fix-color: #048b9f;
+}
+
+input,
+textarea,
+select {
+  padding: 10px !important;
+  border: 1px solid var(--input-border-color) !important;
+  background-color: var(--input-bg-color) !important;
+  border-radius: 8px !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid var(--primary-change-color) !important;
+  box-shadow: 0 0 0 2px var(--primary-change-color) !important;
+  outline: none !important;
+}
+
+/* Error styling */
+input.error,
+textarea.error,
+select.error {
+  border: 2px solid red !important;
+}
+
+/* header on invoice*/
+.heading-of-invoice {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 300;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 60px;
+  text-align: left;
+  margin: 40px 5px;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.btn-pdf {
+  color: var(--primary-fix-color);
+  background-color: var(--primary-light-color);
+  border-color: var(--primary-light-color);
+  font-weight: 500;
+}
+
+.btn-pdf:hover {
+  background-color: var(--primary-fix-color);
+  border-color: var(--primary-fix-color);
+  color: var(--w-color) !important;
+}
+
+.btn-pdf i,
+.btn-pdf span {
+  color: inherit !important;
+}
+
+.btn-email {
+  color: var(--w-color);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  font-weight: 500;
+}
+
+.btn-email:hover {
+  background-color: var(--primary-light-color);
+  border-color: var(--primary-light-color);
+  color: var(--primary-fix-color);
+}
+
+/* end header on invoice */
+
+.from-section {
+  margin-left: 10px;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.heading-section {
+  margin-top: 40px;
+}
+
+.invoice-title {
+  color: var(--primary-change-color);
+}
+
+.invoice-heading {
+  font-size: 2em;
+  font-weight: bold;
+  border: none;
+  background-color: transparent;
+  margin-top: 20px;
+  padding: 18px !important;
+  color: var(--primary-change-color);
+  margin-left: 20px;
+}
+
+/* from */
+.from-label {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  text-align: start;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.from-info-lable {
+  font-weight: 600;
+  text-align: start;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.from-info-input {
+  margin: 5px 0px 4px 0px;
+  padding: 10px !important;
+}
+
+/* end from */
+/* bill to */
+.bill-to-label {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  text-align: start;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.bill-to-info-lable {
+  font-weight: 600;
+  text-align: start;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.bill-to-info-input {
+  margin: 5px 0px 4px 0px;
+  padding: 10px !important;
+}
+
+/* bill to */
+
+.hr {
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/* notes sub total  */
+.sub-total-section {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.notes-teams-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.notes-teams-section {
+  margin-left: 10px;
+}
+
+.notes-teams-lable {
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.notes-teams-input {
+  margin: 5px 0px 4px 0px;
+  padding: 10px !important;
+}
+
+.sub-total-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sub-total-lable {
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.sub-total-input {
+  margin: 5px 0px 4px 0px;
+  padding: 10px !important;
+}
+
+/* end notes sub total  */
+/* invoice width */
+.invoice-custom-width {
+  width: 1400px !important;
+}
+
+.side-card-heading {
+  font-size: 23px;
+  font-weight: 600;
+}
+
+/* save invoice switch  */
+.custom-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.custom-switch-input {
+  display: none;
+}
+
+.custom-switch-wrapper {
+  display: inline-block;
+  position: relative;
+  width: 50px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.custom-switch-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ccc;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+}
+
+.custom-switch-slider::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 19px;
+  height: 19px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.custom-switch-input:checked+.custom-switch-slider {
+  background-color: var(--primary-color);
+}
+
+.custom-switch-input:checked+.custom-switch-slider::before {
+  transform: translateX(25px);
+}
+
+/* end  save invoice switch  */
+
+/* model template choose  */
+.template-image {
+  height: 250px;
+  width: 200px;
+}
+
+@media screen and (min-width: 1000px) {
+  .model-width {
+    max-width: 1000px !important;
+  }
+}
+
+/* end model template choose  */
+
+/* input type number side arrow up and down remove  */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* end input type number side arrow up and down remove */
+
+
+.upi-id-lable {
+  font-weight: 600;
+}
+
+.sy {
+  margin-right: 10px !important;
+}
+
+.sya {
+  margin-right: 10px !important;
+}
+
+.rate-apply {
+  font-size: 10px;
+}
+
+/* settings show margin label bottom */
+.settings-show-margin-label {
+  margin-bottom: 3% !important;
+}
+
+/* end settings show margin label bottom */
+
+.font-bold-600 {
+  font-weight: 600 !important;
+}

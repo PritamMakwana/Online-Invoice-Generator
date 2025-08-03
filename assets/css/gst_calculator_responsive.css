@@ -1,0 +1,86 @@
+@media only screen and (max-width: 1025px) {
+    .header-div {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+    }
+
+    .gst-header-image {
+        justify-content: flex-start !important;
+    }
+}
+
+
+@media only screen and (max-width: 769px) {
+    .section-title {
+        max-width: 90%;
+    }
+
+    .gst-header-image {
+        justify-content: flex-start !important;
+    }
+}
+
+
+@media only screen and (max-width: 426px) {
+    .gst-header-image {
+        justify-content: center !important;
+        height: 300px !important;
+    }
+
+    .calculate-show {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (max-width: 376px) {
+    .gst-header-image {
+        justify-content: center !important;
+        height: 300px !important;
+    }
+
+    .calculate-show {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .section-title h1 {
+        font-size: 20px;
+        padding: 0px;
+        text-align: justify;
+    }
+
+    .section-title p {
+        font-size: 13px;
+        text-align: justify;
+    }
+
+    .details h1 {
+        font-size: 20px;
+    }
+
+    .details p {
+        text-align: justify;
+        font-size: 13px;
+    }
+
+    .details h5 {
+        font-size: 15px;
+    }
+
+    .benefits h6 {
+        font-size: 17px;
+    }
+
+    .benefits p {
+        font-size: 13px;
+        text-align: justify;
+    }
+}
+
+@media only screen and (max-width: 321px) {
+    .gst-header-image {
+        height: 250px !important;
+    }
+}

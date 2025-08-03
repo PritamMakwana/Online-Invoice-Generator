@@ -1,0 +1,121 @@
+<!-- Heading -->
+<div class="Heading" id="heading-section">
+    <div class="d-flex justify-content-between align-items-center">
+        <div class="col-sm-0 col-md-3 col-lg-3">
+        </div>
+        <div class="col-sm-8 col-md-6 col-lg-6">
+            <p class="heading-p" data-i18n="layout.page_note">Unlimited apps and integrations | explore connections →
+            </p>
+        </div>
+        <div class="col-sm-4 col-md-3 col-lg-3">
+            <div class="heading-close" id="heading-close-btn" onclick="closeHeading()">
+                <img src="assets/image/heading/heading-Close.svg" alt="close">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Heading -->
+<!-- menu -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white menu-margin">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+            <!-- step 1 : use letter format -->
+            Invoice <br><small>Generator</small>
+            <!-- step 2 : use image -->
+            <!-- <img src="logo image part" alt="image"  /> -->
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" id="menuToggle">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html" data-i18n="layout.menu_home">Home</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false" data-i18n="layout.menu_documents">
+                        Documents
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="toolsDropdown">
+                        <li><a class="dropdown-item" href="invoice.html"
+                                data-i18n="layout.menu_documents_invoice_generator">Invoice Generator</a></li>
+                        <li><a class="dropdown-item" href="purchase-order-generator.html"
+                                data-i18n="layout.menu_documents_purchase_order_generator">Purchase Order Generator</a>
+                        </li>
+                        <li><a class="dropdown-item" href="quote-generator.html"
+                                data-i18n="layout.menu_documents_quote_generator">Quote Generator</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false" data-i18n="layout.menu_history">
+                        History
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="toolsDropdown">
+                        <li><a class="dropdown-item" href="history.html" data-i18n="layout.menu_history_invoice">Invoice
+                                History</a></li>
+                        <li><a class="dropdown-item" href="purchase-order-history.html"
+                                data-i18n="layout.menu_history_purchase">Purchase Order History</a>
+                        </li>
+                        <li><a class="dropdown-item" href="quote-generator-history.html"
+                                data-i18n="layout.menu_history_quote">Quote History</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false" data-i18n="layout.menu_business_tool">
+                        Business Tools
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="toolsDropdown">
+                        <li><a class="dropdown-item" href="stripe.html"
+                                data-i18n="layout.menu_business_tool_stripe">Stripe</a></li>
+                        <li><a class="dropdown-item" href="paypal.html"
+                                data-i18n="layout.menu_business_tool_paypal">PayPal</a></li>
+                        <li><a class="dropdown-item" href="upwork.html"
+                                data-i18n="layout.menu_business_tool_upwork">Upwork</a></li>
+                        <li><a class="dropdown-item" href="gst-calculator.html"
+                                data-i18n="layout.menu_business_tool_gst_calculator">GST Calculator</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="client-details.html" data-i18n="layout.menu_settings">Settings</a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link" href="help.html" data-i18n="layout.menu_help">Help</a>
+                </li>
+
+                <li class="nav-item mt-2">
+                    <select id="languageSelect" class="form-select form-select-sm">
+                        <option value="english">English</option>
+                        <option value="spanish">Español</option>
+                        <option value="chinese">中文</option>
+                        <option value="arabic">العربية</option>
+                        <option value="hindi">हिन्दी</option>
+                    </select>
+                </li>
+
+                <li class="nav-item ms-1" style="margin-top: 3px;">
+                    <input type="checkbox" id="nightModeToggle" data-toggle="toggle" data-on="🌙" data-off="☀️"
+                        class="ms-2">
+                </li>
+            </ul>
+            <!-- <div class="d-flex">
+                <button type="button" class="btn btn-menu btn-login" onclick="">Log In</button>
+                <button type="button" class="btn btn-menu btn-try" onclick="">Try for free</button>
+            </div> -->
+        </div>
+    </div>
+</nav>
+<!-- end menu -->
+
+
+<!-- <div id="google_translate_element" class="google-translate"></div> -->

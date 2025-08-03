@@ -1,0 +1,169 @@
+@media only screen and (max-width: 1025px) {
+    .side-item-heading {
+        font-size: 18px;
+    }
+
+    .fa-chevron-right {
+        font-size: 25px;
+    }
+
+    .card-heading {
+        font-size: 30px;
+    }
+
+    .col-form-label {
+        font-size: 13px;
+    }
+
+    .add-btn {
+        padding: 5px 35px;
+        font-size: 14px;
+    }
+
+    .export-btn {
+        padding: 5px 20px;
+        font-size: 14px;
+    }
+
+    .import-btn {
+        padding: 4px 20px;
+        font-size: 14px;
+    }
+
+    .table-h {
+        font-size: 22px;
+    }
+
+    .dataTables_wrapper {
+        font-size: 10px;
+    }
+
+    table.dataTable thead th {
+        padding: 10px !important;
+    }
+
+    table.dataTable tbody td {
+        padding: 5px !important;
+    }
+
+    .edit-btn {
+        font-size: 10px;
+        margin: 1px 1px !important;
+        padding: 2px 5px;
+    }
+}
+
+
+@media only screen and (max-width: 769px) {
+
+    .card-heading {
+        font-size: 22px;
+        margin: 10px 0px;
+    }
+
+    .side-item-heading {
+        font-size: 14px;
+    }
+
+    .fa-chevron-right {
+        font-size: 16px;
+    }
+
+    .side-item-heading {
+        margin: 0px 0px;
+    }
+
+    .col-form-label {
+        font-size: 13px;
+        line-height: 5px;
+    }
+
+    .form-control {
+        padding: 3px 4px;
+        font-size: 11px;
+    }
+
+    .add-btn {
+        padding: 4px 25px;
+        font-size: 12px;
+    }
+
+    .export-btn {
+        padding: 4px 20px;
+        font-size: 11px;
+    }
+
+    .import-btn {
+        padding: 4px 20px;
+        font-size: 11px;
+    }
+
+    .table-h {
+        font-size: 17px;
+    }
+}
+
+.side-item-responsive-on {
+    display: none !important;
+}
+
+@media only screen and (max-width: 426px) {
+    .side-item-responsive-off {
+        display: none !important;
+    }
+
+    .side-item-responsive-on {
+        display: flex !important;
+    }
+
+    .side-item {
+        margin: 0px 0px 10px 0px;
+        padding: 10px 20px;
+    }
+
+    .side-item-heading {
+        font-size: 10px;
+    }
+
+    .card-body {
+        flex: 1 1 auto;
+        padding: 3px 3px;
+    }
+
+    .col-form-label {
+        font-size: 15px;
+        line-height: 10px;
+    }
+
+    .form-control {
+        padding: 9px 4px;
+        font-size: 12px;
+    }
+
+    .add-btn {
+        padding: 6px 25px;
+        font-size: 12px;
+    }
+
+    .export-btn {
+        padding: 3px 10px;
+        font-size: 10px;
+    }
+
+    .import-btn {
+        padding: 3px 8px;
+        font-size: 11px;
+    }
+
+    .mobile-div-btns {
+        display: flex;
+    }
+
+    .table-h {
+        font-size: 10px;
+    }
+
+    .fileds-container {
+        margin: 10px 10px;
+    }
+}

@@ -1,0 +1,192 @@
+@media only screen and (max-width: 1025px) {
+    .invoice-logo {
+        padding: 0px 50px;
+    }
+
+    .from-label {
+        font-size: 20px;
+    }
+
+    .bill-to-label {
+        font-size: 19px;
+    }
+
+    .from-info-lable {
+        font-size: 14px;
+    }
+
+    .from-info-input {
+        font-size: 14px;
+    }
+
+    .bill-to-info-lable {
+        font-size: 14px;
+    }
+
+    .notes-teams-input {
+        font-size: 12px;
+    }
+
+    .bank-form-group label {
+        font-size: 12px;
+    }
+
+    .bank-form-group input {
+        font-size: 11px;
+    }
+
+    #accountTypeSelect {
+        font-size: 12px;
+    }
+
+    .side-card-heading {
+        font-size: 15px;
+    }
+
+    .save-invoice-label {
+        font-size: 11px;
+        font-weight: 500 !important;
+    }
+
+    .select-currency-label,
+    .select-template-label,
+    .select-client-label,
+    .select-from-label,
+    .choose-primary-color-label,
+    .select-primary-color-label {
+        font-size: 11px;
+        font-weight: 500 !important;
+    }
+
+    #currency,
+    #template,
+    #clientSelect,
+    #fromsSelect {
+        font-size: 11px;
+    }
+
+
+}
+
+@media only screen and (max-width: 769px) {
+    .invoice-logo {
+        padding: 5px 21px;
+    }
+}
+
+
+@media only screen and (max-width: 500px) {
+    .heading-of-invoice {
+        font-size: 20px;
+    }
+
+    .btn-pdf {
+        font-size: 12px;
+    }
+
+    #chooseTemplatebtn {
+        margin-top: 0px !important;
+    }
+
+    .custom-switch-slider {
+        height: 17px;
+        width: 40px;
+    }
+
+    .custom-switch-slider::before {
+        top: 2px;
+        left: -2px;
+        width: 14px;
+        height: 14px;
+    }
+
+    .invoice-heading {
+        font-size: 13px;
+        margin-top: 20px;
+        padding: 10px !important;
+        margin-left: 0px;
+    }
+
+    .table-responsive {
+        font-size: 12px;
+    }
+
+    .table-responsive input {
+        font-size: 12px;
+    }
+
+    #table-filed {
+        width: 500px !important;
+        overflow-x: auto !important;
+        display: block;
+    }
+
+    .line-item {
+        font-size: 12px;
+        padding: 7px 15px;
+        margin-top: 10px;
+    }
+
+    .notes-teams-lable {
+        font-size: 12px;
+    }
+
+    .sub-total-lable {
+        font-size: 12px;
+    }
+
+    #subtotal {
+        font-size: 12px;
+    }
+
+    #signatureCanvas {
+        height: 122px;
+    }
+
+    .btn-email {
+        font-size: 12px;
+    }
+
+    .input-group label {
+        margin-right: 0px;
+    }
+
+    .bank-form-group label {
+        flex: 0 0 30px;
+    }
+
+    .bank-form-group {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 2px;
+    }
+
+    .authorized-signatory {
+        width: 100%;
+    }
+
+    #signatureCanvas {
+        height: 100px;
+    }
+
+    .authorized-signatory span {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header-gradient-bg {
+        height: 100px;
+    }
+
+    .header-heading {
+        margin-top: 20px;
+    }
+
+    .heading-of-invoice {
+        line-height: 25px;
+    }
+
+}

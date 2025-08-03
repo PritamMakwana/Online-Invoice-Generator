@@ -1,0 +1,186 @@
+:root {
+    --primary-color: #048b9f;
+    --primary-light-color: #048b9f21;
+    --w-color: white;
+    --table-row-color: black;
+    --primary-fix-color: #048b9f;
+  }
+  
+  /* history table heading */
+  .histroy-table-heading {
+    background-color: var(--primary-fix-color) !important;
+    color: white;
+  }
+  
+  /* history table heading */
+  
+  /* download histroy button */
+  .download-histroy {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--w-color);
+    font-weight: 500;
+  }
+  
+  .download-histroy:hover {
+    color: var(--primary-color);
+    background-color: var(--primary-light-color);
+    border-color: var(--primary-light-color);
+  }
+  
+  /*end  download histroy button */
+  
+  /* delete invoice button */
+  .delete-invoice {
+    background-color: var(--primary-light-color);
+    border-color: var(--primary-light-color);
+    color: var(--primary-color);
+    font-weight: 500;
+  }
+  
+  .delete-invoice:hover {
+    color: var(--w-color);
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+  
+  /* end delete invoice button */
+  
+  /* search  */
+  #download-history-table_filter {
+    margin-bottom: 10px !important;
+  }
+  
+  /* end search  */
+  
+  /* download histroy button */
+  #clear-history-btn {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: var(--w-color) !important;
+    font-weight: 500 !important;
+    box-shadow: none !important;
+  }
+  
+  #clear-history-btn:hover {
+    color: var(--primary-color) !important;
+    background-color: var(--primary-light-color) !important;
+    border-color: var(--primary-light-color) !important;
+    box-shadow: none !important;
+  }
+  
+  /*end  download histroy button */
+  
+  .table-striped>tbody>tr:nth-of-type(odd) {
+    color: var(--table-row-color) !important;
+  }
+  
+  .table-striped>tbody>tr:nth-of-type(even) {
+    color: var(--table-row-color) !important;
+  }
+  
+  .header-sub-heading-page {
+    font-family: 'Poppins', sans-serif !important;
+    line-height: 45px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-weight: 600;
+    font-size: 30px;
+  }
+  
+  .header-gradient-bg {
+    text-align: center;
+    background: linear-gradient(45deg,
+        #f4eed7 -11.09%,
+        var(--primary-color) 95.91%);
+    height: 200px;
+    border-radius: 10px;
+    margin: 10px;
+  }
+  
+  .header-heading {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 96px;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 50px;
+  }
+  
+  @media only screen and (max-width: 1200px) {
+    .header-heading {
+      font-size: 50px;
+      line-height: 50px;
+    }
+  }
+  
+  @media only screen and (max-width: 500px) {
+    .header-heading {
+      font-size: 30px;
+      line-height: 30px;
+    }
+  }
+  
+  table.dataTable {
+    border-radius: 15px;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    margin: 40px 0px !important;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2),
+      0px 6px 20px 6px rgba(0, 0, 0, 0.19);
+  }
+  
+  table.dataTable thead th {
+    padding: 20px !important;
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  table.dataTable tbody td {
+    padding: 20px !important;
+    text-align: left;
+    vertical-align: middle;
+  }
+  
+  tbody,
+  td,
+  tfoot,
+  th,
+  thead,
+  tr {
+    border-color: #ffffff;
+    border-style: solid;
+    border-width: 0;
+  }
+  
+  @media (max-width: 768px) {
+  
+    table.dataTable thead th,
+    table.dataTable tbody td {
+      padding: 10px;
+    }
+  }
+  
+  /* Default styling for table rows */
+  table.dataTable tbody tr {
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* Apply shadow when a row is clicked */
+  table.dataTable tbody tr.clicked-row {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    transform: scale(1.02);
+    /* Optional: slight scaling effect */
+    background-color: #f8f9fa;
+    /* Optional: highlight clicked row */
+  }
+  
+  .dropdown-menu-up {
+    transform: translate(-95px, -95px) !important;
+  }

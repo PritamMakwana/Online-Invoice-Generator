@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Poppins Font -->
+    <link href="/assets/cdn/Font/poppins.css" rel="stylesheet">
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Google Font: Space Grotesk -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/gst_calculator.css" rel="stylesheet">
+    <link href="assets/css/gst_calculator_responsive.css" rel="stylesheet">
+    <link href="/assets/cdn/bootstrap-toggle/css/bootstrap-toggle.min.css" rel="stylesheet">
+
+    <title>GST Calculator | Online Invoice Generator</title>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header id="header"></header>
+    <!-- contact -->
+
+    <!-- header -->
+    <div class="header-gradient-bg row">
+        <div class="col-sm-0 col-md-0 col-lg-2">
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-8">
+            <h1 class="header-heading" data-i18n="tool_gst.page_heading">GST Calculator</h1>
+        </div>
+    </div>
+    <!-- end header -->
+
+    <div class="section-title mt-3">
+        <h1 data-i18n="tool_gst.page_title">Free GST Calculator: Quickly Compute Goods and Services Tax for Your
+            Transactions</h1>
+        <p data-i18n="tool_gst.page_description">Effortlessly calculate GST with our free online GST calculator. Enter
+            your transaction amount to determine
+            the applicable GST rate and total cost. Ideal for businesses and individuals looking to ensure accurate tax
+            calculations for seamless financial management and compliance. Simplify your GST calculations today!</p>
+    </div>
+
+    <div class="container">
+        <div class="row header-div">
+            <div class="col-lg-6 col-sm-12 col-md-12 my-2 details" data-i18n-html="tool_gst.sec_1">
+                <h1>Free GST Calculator Tool</h1>
+                <p>The Free GST Calculator Tool is a user-friendly online solution designed to help businesses,
+                    freelancers,
+                    and
+                    individuals accurately calculate the Goods and Services Tax (GST) on various transactions. This tool
+                    simplifies the process of determining the GST component and the total amount, making it an essential
+                    resource for those involved in sales, invoicing, or financial planning.</p>
+                <h5>Small Business Owners</h5>
+                <p>Calculate GST on products and services for accurate pricing and invoicing.</p>
+
+                <h5>Freelancers</h5>
+                <p>Determine the GST component on your services before billing clients.</p>
+
+                <h5>Consumers</h5>
+                <p>Check how much GST you’re paying on your purchases.</p>
+
+                <h5>Accountants and Financial Planners</h5>
+                <p>Simplify the tax calculation process for various transactions.
+                </p>
+            </div>
+            <div class="col-lg-6 col-sm-12 col-md-12 d-flex justify-content-end my-2 gst-header-image">
+                <img src="assets/image/tools/gst/gst-banner.avif" alt="GST Image">
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Steps Area -->
+    <section class="">
+        <div class="container" data-i18n-html="tool_gst.sec_2">
+            <div class="section-title mt-4">
+                <h3>How to Use the GST Calculator</h3>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 col-sm-12 col-md-6">
+                    <div class="single-featured-box">
+                        <div class="icon">
+                            <img class="p-1 mb-2" style="height: 50px;" src="assets/image/tools/gst/enter.png" />
+                        </div>
+                        <h5>1.Enter the Amount</h5>
+                        <p>Input the amount you want to calculate GST for in the "Amount" field.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-12 col-md-6">
+                    <div class="single-featured-box">
+                        <div class="icon">
+                            <img class="p-1 mb-2" style="height: 50px;"
+                                src="assets/image/tools/gst/number-blocks.png" />
+                        </div>
+                        <h5>2.Select GST Percentage:</h5>
+                        <p>Choose the appropriate GST rate from the "GST %" dropdown menu (e.g., 5%, 12%, 18%, 28%).</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-12 col-md-6 ">
+                    <div class="single-featured-box">
+                        <div class="icon">
+                            <img class="p-2 mb-2" style="height: 50px;" src="assets/image/tools/gst/choose.png" />
+                        </div>
+                        <h5>3.Choose Tax Type:</h5>
+                        <p>Select "Inclusive" if GST is already included in the amount, or "Exclusive" if GST needs to
+                            be
+                            added.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-12 col-md-6 ">
+                    <div class="single-featured-box">
+                        <div class="icon">
+                            <img class="p-2 mb-2" style="height: 50px;" src="assets/image/tools/gst/view.png" />
+                        </div>
+                        <h5>4.View Results:</h5>
+                        <p>Click "Submit" to calculate. The Actual Amount, GST Amount, and Total Amount will be
+                            displayed.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- End Steps Area -->
+
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12 my-1">
+                <div class="calculator-container">
+                    <h1 class="calculator-header" data-i18n="tool_gst.sec_3_title">GST Calculator</h1>
+                    <div id="directives" class="calculator-form">
+                        <div class="form-group">
+                            <label for="amount" data-i18n="tool_gst.sec_3_amount">Amount</label>
+                            <input class="form-control" id="amount" name="amount" type="number" value="0" />
+                        </div>
+                        <div class="form-group">
+                            <label for="gst-percentage" data-i18n="tool_gst.sec_3_gst">GST %</label>
+                            <select id="gst-percentage" class="form-control">
+                                <option value="5" selected="selected">5%</option>
+                                <option value="12">12%</option>
+                                <option value="18">18%</option>
+                                <option value="28">28%</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tax-type" data-i18n="tool_gst.sec_3_tax">Tax</label>
+                            <select id="tax-type" class="form-control">
+                                <option value="Inclusive" selected="selected" data-i18n="tool_gst.sec_3_inclusive">
+                                    Inclusive</option>
+                                <option value="Exclusive" data-i18n="tool_gst.sec_3_exclusive">Exclusive</option>
+                            </select>
+                        </div>
+
+                        <button type="button" class="btn-submit btn  w-100" onclick="calculateGST()"
+                            data-i18n="tool_gst.sec_3_gst_btn">Calculate
+                            GST</button>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center my-5 calculate-show">
+                    <div class="mx-1">
+                        <h2>₹<span id="actual-amount">0</span></h2>
+                        <p data-i18n="tool_gst.sec_3_result_actual">Actual Amount</p>
+                    </div>
+                    <div class="mx-3">
+                        <h2>+</h2>
+                    </div>
+                    <div class="mx-1">
+                        <h2>₹<span id="gst-amount">0</span></h2>
+                        <p data-i18n="tool_gst.sec_3_result_gst">GST Amount</p>
+                    </div>
+                    <div class="mx-3">
+                        <h2>=</h2>
+                    </div>
+                    <div class="mx-1">
+                        <h2>₹<span id="total-amount">0</span></h2>
+                        <p data-i18n="tool_gst.sec_3_result_total">Total Amount</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 my-1">
+                <div class="card" data-i18n-html="tool_gst.sec_3_benefits">
+                    <div class="card-header d-flex justify-content-center mb-1">
+                        <h3 class="my-1" style="color: white;">Benefits of GST Calculator</h3>
+                    </div>
+                    <div class="m-3 benefits">
+                        <h6><strong> Time-Saving: </strong></h6>
+                        <p>The GST Calculator quickly computes GST amounts, eliminating the need for manual
+                            calculations.
+                            This efficiency saves time, particularly when dealing with multiple transactions or complex
+                            invoices.</p>
+                        <h6><strong>Accuracy: </strong></h6>
+                        <p>Manual calculations are prone to errors, especially when dealing with varying GST rates. The
+                            GST
+                            Calculator ensures precise calculations, reducing the risk of mistakes that could lead to
+                            financial discrepancies or tax issues.</p>
+                        <h6><strong>Ease of Use: </strong></h6>
+                        <p>With an intuitive interface, the GST Calculator is user-friendly, making it accessible even
+                            to
+                            those without accounting or tax expertise. Users can easily input data and receive instant
+                            results without complex steps.</p>
+                        <h6><strong>Versatility: </strong></h6>
+                        <p>The tool can handle different GST rates, making it suitable for a wide range of businesses
+                            and
+                            regions. Whether you're dealing with standard rates or custom rates, the calculator can
+                            accommodate your needs.</p>
+                        <h6><strong>Real-Time Results:</strong></h6>
+                        <p>The GST Calculator delivers results instantly, enabling users to make quick decisions,
+                            whether
+                            setting prices, preparing invoices, or planning budgets. This is particularly useful in
+                            fast-paced business environments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- contact end  -->
+    <!-- Footer Section -->
+    <div id="footer"></div>
+    <button id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <script src="assets/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="assets/js/popper.min.js" crossorigin="anonymous"></script>
+    <script src="assets/js/jquery.js" crossorigin="anonymous"></script>
+    <script src="/assets/cdn/bootstrap-toggle/js/bootstrap-toggle.min.js"></script>
+    <script src="assets/js/js.js" crossorigin="anonymous"></script>
+
+
+    <script src="assets/js/gst_calculator.js" crossorigin="anonymous"></script>
+    <script src="/assets/js/lang.js" crossorigin="anonymous" defer></script>
+    <script src="/assets/js/loading-spinner.js" crossorigin="anonymous" ></script>
+
+</body>
+
+</html>

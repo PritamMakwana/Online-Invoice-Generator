@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Poppins Font -->
+    <link href="/assets/cdn/Font/poppins.css" rel="stylesheet">
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Google Font: Space Grotesk -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/settings.css" rel="stylesheet">
+    <link href="assets/css/setting_default_currency.css" rel="stylesheet">
+    <link href="assets/css/setting_default_currency-responsive.css" rel="stylesheet">
+    <link href="/assets/cdn/bootstrap-toggle/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link href="/assets/cdn/sweetalert/css/sweetalert2.min.css" rel="stylesheet">
+    <title>Set Default Currency | Online Invoice Generator</title>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header id="header" style="display: none;"></header>
+
+    <!-- header menu -->
+    <!-- Heading -->
+    <div class="Heading">
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="col-sm-0 col-md-3 col-lg-3">
+            </div>
+            <div class="col-sm-8 col-md-6 col-lg-6">
+                <p class="heading-p" data-i18n="layout.page_note">Unlimited apps and integrations | explore connections
+                    →
+                </p>
+            </div>
+            <div class="col-sm-4 col-md-3 col-lg-3">
+                <div class="heading-close">
+                    <img src="assets/image/heading/heading-Close.svg" alt="close">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Heading -->
+    <!-- menu -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white menu-margin">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <!-- step 1 : use letter format -->
+                Invoice <br><small>Generator</small>
+                <!-- step 2 : use image -->
+                <!-- <img src="logo image part" alt="image"  /> -->
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" id="menuToggle">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" data-i18n="layout.menu_home">Home</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false" data-i18n="layout.menu_documents">
+                            Documents
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="toolsDropdown">
+                            <li><a class="dropdown-item" href="invoice.html"
+                                    data-i18n="layout.menu_documents_invoice_generator">Invoice Generator</a></li>
+                            <li><a class="dropdown-item" href="purchase-order-generator.html"
+                                    data-i18n="layout.menu_documents_purchase_order_generator">Purchase Order
+                                    Generator</a>
+                            </li>
+                            <li><a class="dropdown-item" href="quote-generator.html"
+                                    data-i18n="layout.menu_documents_quote_generator">Quote Generator</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false" data-i18n="layout.menu_history">
+                            History
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="toolsDropdown">
+                            <li><a class="dropdown-item" href="history.html"
+                                    data-i18n="layout.menu_history_invoice">Invoice
+                                    History</a></li>
+                            <li><a class="dropdown-item" href="purchase-order-history.html"
+                                    data-i18n="layout.menu_history_purchase">Purchase Order History</a>
+                            </li>
+                            <li><a class="dropdown-item" href="quote-generator-history.html"
+                                    data-i18n="layout.menu_history_quote">Quote History</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false" data-i18n="layout.menu_business_tool">
+                            Business Tools
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="toolsDropdown">
+                            <li><a class="dropdown-item" href="stripe.html"
+                                    data-i18n="layout.menu_business_tool_stripe">Stripe</a></li>
+                            <li><a class="dropdown-item" href="paypal.html"
+                                    data-i18n="layout.menu_business_tool_paypal">PayPal</a></li>
+                            <li><a class="dropdown-item" href="upwork.html"
+                                    data-i18n="layout.menu_business_tool_upwork">Upwork</a></li>
+                            <li><a class="dropdown-item" href="gst-calculator.html"
+                                    data-i18n="layout.menu_business_tool_gst_calculator">GST Calculator</a></li>
+                        </ul>
+                    </li> -->
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="client-details.html" data-i18n="layout.menu_settings">Settings</a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="help.html" data-i18n="layout.menu_help">Help</a>
+                    </li>
+
+                    <li class="nav-item ms-1">
+                        <input type="checkbox" id="nightModeToggle" data-toggle="toggle" data-on="🌙" data-off="☀️"
+                            class="ms-2">
+                    </li>
+                </ul>
+                <!-- <div class="d-flex">
+                <button type="button" class="btn btn-menu btn-login" onclick="">Log In</button>
+                <button type="button" class="btn btn-menu btn-try" onclick="">Try for free</button>
+            </div> -->
+            </div>
+        </div>
+    </nav>
+    <!-- end menu -->
+
+
+    <!-- <div id="google_translate_element" class="google-translate"></div> -->
+
+    <!-- header menu end -->
+
+
+
+
+    <!-- contact -->
+
+    <!-- header -->
+    <div class="header-gradient-bg row">
+        <div class="col-sm-0 col-md-0 col-lg-2">
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-8">
+            <h1 class="header-heading" data-i18n="setting_default_currency_template.manage_settings">Manage Settings
+            </h1>
+        </div>
+    </div>
+    <!-- end header -->
+
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-12 row d-flex flex-column side-item-responsive-off">
+                <div class="col-lg-12 col-md-12 col-sm-6">
+                    <div class="side-item" onclick="window.location.href='client-details.html'">
+                        <div class="side-item-body">
+                            <div class="d-flex justify-content-around align-items-center">
+                                <div>
+                                    <p class="side-item-heading"
+                                        data-i18n="setting_default_currency_template.section_client_details">Client
+                                        Details</p>
+                                </div>
+                                <div>
+                                    <i class="fas fa-duotone fa-regular fa-chevron-right arrow-icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 col-md-12 col-sm-6">
+                    <div class="side-item" onclick="window.location.href='from-details.html'">
+                        <div class="side-item-body">
+                            <div class="d-flex justify-content-around align-items-center">
+                                <div>
+                                    <p class="side-item-heading"
+                                        data-i18n="setting_default_currency_template.section_from_details">From Details
+                                    </p>
+                                </div>
+                                <div>
+                                    <i class="fas fa-duotone fa-regular fa-chevron-right arrow-icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 col-md-12 col-sm-6">
+                    <div class="side-item active-item" onclick="window.location.href='setting-default-currency.html'">
+                        <div class="side-item-body">
+                            <div class="d-flex justify-content-around align-items-center">
+                                <div>
+                                    <p class="side-item-heading"
+                                        data-i18n="setting_default_currency_template.section_set_default_currency">Set
+                                        Default Currency</p>
+                                </div>
+                                <div>
+                                    <i class="fas fa-duotone fa-regular fa-chevron-right arrow-icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 col-md-12 col-sm-6">
+                    <div class="side-item" onclick="window.location.href='setting-default-template.html'">
+                        <div class="side-item-body">
+                            <div class="d-flex justify-content-around align-items-center">
+                                <div>
+                                    <p class="side-item-heading"
+                                        data-i18n="setting_default_currency_template.section_set_default_template">Set
+                                        Default Template</p>
+                                </div>
+                                <div>
+                                    <i class="fas fa-duotone fa-regular fa-chevron-right arrow-icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 col-md-12 col-sm-6">
+                    <div class="side-item" onclick="window.location.href='setting-import-products.html'">
+                        <div class="side-item-body">
+                            <div class="d-flex justify-content-around align-items-center">
+                                <div>
+                                    <p class="side-item-heading"
+                                        data-i18n="setting_default_currency_template.section_import_products">Import
+                                        Products</p>
+                                </div>
+                                <div>
+                                    <i class="fas fa-duotone fa-regular fa-chevron-right arrow-icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-12 row side-item-responsive-on ">
+
+                <div class="col-6">
+                    <div class="side-item" onclick="window.location.href='client-details.html'">
+                        <div class="side-item-body">
+                            <div class="d-flex justify-content-around align-items-center">
+                                <div>
+                                    <p class="side-item-heading"
+                                        data-i18n="setting_default_currency_template.section_client_details">Client
+                                        Details</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="side-item" onclick="window.location.href='from-details.html'">
+                        <div class="side-item-body">
+                            <div class="d-flex justify-content-around align-items-center">
+                                <div>
+                                    <p class="side-item-heading"
+                                        data-i18n="setting_default_currency_template.section_from_details">From Details
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="side-item active-item" onclick="window.location.href='setting-default-currency.html'">
+                        <div class="side-item-body">
+                            <div class="d-flex justify-content-around align-items-center">
+                                <div>
+                                    <p class="side-item-heading"
+                                        data-i18n="setting_default_currency_template.section_set_default_currency">Set
+                                        Default Currency</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="side-item" onclick="window.location.href='setting-default-template.html'">
+                        <div class="side-item-body">
+                            <div class="d-flex justify-content-around align-items-center">
+                                <div>
+                                    <p class="side-item-heading"
+                                        data-i18n="setting_default_currency_template.section_set_default_template">Set
+                                        Default Template</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="side-item" onclick="window.location.href='setting-import-products.html'">
+                        <div class="side-item-body">
+                            <div class="d-flex justify-content-around align-items-center">
+                                <div>
+                                    <p class="side-item-heading"
+                                        data-i18n="setting_default_currency_template.section_import_products">Import
+                                        Products</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-9 col-md-9 col-sm-12">
+                <!-- content default currncy  -->
+                <div class="container">
+                    <div class="row justify-content-center mt-4">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body card-body-color">
+                                    <p class="card-heading"
+                                        data-i18n="setting_default_currency_template.currency_title">Default Currency
+                                    </p>
+                                    <form>
+                                        <div class="row fileds-container">
+                                            <div class="col-lg-5 col-md-12 col-sm-12  form-group mb-2 row">
+                                                <label for="address" class="col-form-label text-md-right"><b><span
+                                                            data-i18n="setting_default_currency_template.currency_select_currency">Select
+                                                            Currency</span></b></label>
+                                                <!-- <div class="col-md-8"> -->
+                                                <select id="currency" class="form-select" name="currency"
+                                                    onchange="updateCurrency()">
+                                                    <option value="$">$ USD (US Dollar)</option>
+                                                    <option value="€">€ EUR (Euro)</option>
+                                                    <option value="¥">¥ JPY (Japanese Yen)</option>
+                                                    <option value="£">£ GBP (British Pound)</option>
+                                                    <option value="A$">A AUD (Australian Dollar)</option>
+                                                    <option value="C$">C CAD (Canadian Dollar)</option>
+                                                    <option value="CHF">CHF CHF (Swiss Franc)</option>
+                                                    <option value="CNY">CNY CNY (Chinese Yuan)</option>
+                                                    <option value="₩">₩ KRW (South Korean Won)</option>
+                                                    <option value="₹">₹ INR (Indian Rupee)</option>
+                                                </select>
+                                                <!-- </div> -->
+                                            </div>
+
+
+                                            <div class="col-lg-2 col-md-0 col-sm-0  form-group mb-2 row">
+                                            </div>
+
+
+                                            <div class="col-lg-5 col-md-12 col-sm-12  form-group mb-2 row">
+                                                <label class="col-form-label text-md-right"><b><span
+                                                            data-i18n="setting_default_currency_template.select_language">Select
+                                                            Language</b></span></label>
+                                                <select id="languageSelect" class="form-select form-select-sm"
+                                                    style="width: 300px;">
+                                                    <option value="english">English</option>
+                                                    <option value="spanish">Español</option>
+                                                    <option value="chinese">中文</option>
+                                                    <option value="arabic">العربية</option>
+                                                    <option value="hindi">हिन्दी</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end content default currncy  -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div id="footer"></div>
+    <button id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <script src="assets/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="assets/js/popper.min.js" crossorigin="anonymous"></script>
+    <script src="assets/js/jquery.js" crossorigin="anonymous"></script>
+    <script src="/assets/cdn/bootstrap-toggle/js/bootstrap-toggle.min.js"></script>
+    <script src="/assets/cdn/sweetalert/js/sweetalert2.min.js"></script>
+    <script src="assets/js/js.js" crossorigin="anonymous"></script>
+
+
+    <script src="assets/js/setting_default_currency.js" crossorigin="anonymous"></script>
+    <script src="/assets/js/lang.js" crossorigin="anonymous" defer></script>
+    <script src="/assets/js/loading-spinner.js" crossorigin="anonymous" ></script>
+
+</body>
+
+</html>

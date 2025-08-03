@@ -1,0 +1,52 @@
+:root {
+  --primary-color: #048b9f;
+  --primary-light-color: #048b9f21;
+  --w-color: white;
+  --black: #000000;
+  --card-color: white;
+  --lable-color: #024b56;
+  --primary-input-bg: #048b9f0f;
+}
+
+.card-body-color {
+  background-color: var(--card-color);
+}
+.card-body-color label {
+  color: var(--black);
+}
+
+.card-heading {
+  color: var(--lable-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 700;
+  margin: 30px 0px;
+}
+.form-select {
+  transition: box-shadow 0.3s ease;
+  background-color: var();
+  border-color: var(--primary-input-bg);
+}
+
+.form-select:focus {
+  box-shadow: 0px 0px 2px 2px var(--primary-light-color);
+  border-color: var(--primary-light-color);
+  outline: none;
+}
+.card {
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2),
+    0px 6px 20px 6px rgba(0, 0, 0, 0.19);
+  border-radius: 20px;
+}
+.card-body {
+  border-radius: 20px !important;
+}
+.fileds-container {
+  margin: 10px 60px;
+}
+
+.card-body-color label {
+  color: var(--lable-color);
+}
