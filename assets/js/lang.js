@@ -51,10 +51,50 @@ function loadLanguage(lang) {
     let loaded = 0;
     window.translations = {};
 
+    // sections.forEach(section => {
+    //     const script = document.createElement('script');
+    //     if (['invoice', 'purchase', 'quote', 'document_alert'].includes(section)) {
+    //         script.src = `/assets/lang/${lang}/documents/${section}.js`;
+    //         script.onload = () => {
+    //             loaded++;
+    //             if (loaded === sections.length) {
+    //                 updateText(flattenTranslations(window.translations));
+    //             }
+    //         };
+    //     } else if (['invoice_history', 'quote_history', 'purchase_history'].includes(section)) {
+    //         script.src = `/assets/lang/${lang}/documents/${section}.js`;
+    //         script.onload = () => {
+    //             loaded++;
+    //             if (loaded === sections.length) {
+    //                 setTimeout(() => updateText(flattenTranslations(window.translations)), 1000);
+    //             }
+    //         };
+    //     } else if (['setting_client_details', 'setting_from_details', 'setting_import_product', 'setting_default_currency_template'].includes(section)) {
+    //         script.src = `/assets/lang/${lang}/settings/${section}.js`;
+    //         script.onload = () => {
+    //             loaded++;
+    //             if (loaded === sections.length) {
+    //                 setTimeout(() => updateText(flattenTranslations(window.translations)), 1000);
+    //             }
+    //         };
+    //     }
+    //     else {
+    //         script.src = `/assets/lang/${lang}/${section}.js`;
+    //         script.onload = () => {
+    //             loaded++;
+    //             if (loaded === sections.length) {
+    //                 updateText(flattenTranslations(window.translations));
+    //             }
+    //         };
+    //     }
+
+    //     document.body.appendChild(script);
+    // });
+
     sections.forEach(section => {
         const script = document.createElement('script');
         if (['invoice', 'purchase', 'quote', 'document_alert'].includes(section)) {
-            script.src = `/assets/lang/${lang}/documents/${section}.js`;
+            script.src = `assets/lang/${lang}/documents/${section}.js`;
             script.onload = () => {
                 loaded++;
                 if (loaded === sections.length) {
@@ -62,7 +102,7 @@ function loadLanguage(lang) {
                 }
             };
         } else if (['invoice_history', 'quote_history', 'purchase_history'].includes(section)) {
-            script.src = `/assets/lang/${lang}/documents/${section}.js`;
+            script.src = `assets/lang/${lang}/documents/${section}.js`;
             script.onload = () => {
                 loaded++;
                 if (loaded === sections.length) {
@@ -70,7 +110,7 @@ function loadLanguage(lang) {
                 }
             };
         } else if (['setting_client_details', 'setting_from_details', 'setting_import_product', 'setting_default_currency_template'].includes(section)) {
-            script.src = `/assets/lang/${lang}/settings/${section}.js`;
+            script.src = `assets/lang/${lang}/settings/${section}.js`;
             script.onload = () => {
                 loaded++;
                 if (loaded === sections.length) {
@@ -79,7 +119,7 @@ function loadLanguage(lang) {
             };
         }
         else {
-            script.src = `/assets/lang/${lang}/${section}.js`;
+            script.src = `assets/lang/${lang}/${section}.js`;
             script.onload = () => {
                 loaded++;
                 if (loaded === sections.length) {
